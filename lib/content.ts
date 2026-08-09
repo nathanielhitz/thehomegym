@@ -43,10 +43,11 @@ export const wixImage = (id: string, w: number, h: number) =>
   `https://static.wixstatic.com/media/${id}/v1/fill/w_${w},h_${h},al_c,q_85,enc_auto/${id}`;
 
 export const images = {
-  // Full-bleed hero: eigen zaal, donkere wand links waar de tekst overheen valt.
+  // Full-bleed hero: eigen zaal, donkere wanden waar de tekst overheen valt.
+  // Dit is de enige foto die lokaal staat (public/Hero.jpeg, 1360x1020).
   hero: {
-    src: wixImage("49ba32_854e20b2bf8c4da7b6797e8ecf019314~mv2.jpg", 2100, 1400),
-    alt: "Trainer van Thehomegym legt een oefening uit bij het squatrek",
+    src: "/Hero.jpeg",
+    alt: "Trainingsruimte van Thehomegym met dumbbellrek, spiegelwand en verstelbare banken",
   },
   coaching: {
     src: wixImage("49ba32_1f46135f3dc94ac1a131ae00135368c1~mv2.jpg", 1400, 1000),

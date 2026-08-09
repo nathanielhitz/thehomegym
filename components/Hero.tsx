@@ -15,16 +15,17 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_center] lg:object-[45%_center]"
+        className="object-cover object-[38%_center] lg:object-[45%_center]"
       />
 
       {/* Scrims. De basislaag houdt de tekst leesbaar als de foto ooit door een
           lichtere wordt vervangen, de gradiënt legt het zwaartepunt links op
-          desktop en onderaan op mobiel. */}
-      <div aria-hidden className="absolute inset-0 bg-ink/20" />
+          desktop en onderaan op mobiel. De foto is zelf al donker, dus beide
+          lagen blijven licht genoeg om de zaal herkenbaar te houden. */}
+      <div aria-hidden className="absolute inset-0 bg-ink/10" />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink/92 via-ink/68 to-ink/15 lg:bg-gradient-to-r lg:from-ink/86 lg:via-ink/52 lg:to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-ink/88 via-ink/50 to-transparent lg:bg-gradient-to-r lg:from-ink/82 lg:via-ink/42 lg:to-transparent"
       />
       {/* Extra donkere band bovenaan, zodat de transparante navigatie leesbaar blijft */}
       <div
