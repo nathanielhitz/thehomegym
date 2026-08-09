@@ -61,8 +61,8 @@ export const images = {
     alt: "Lid van Thehomegym traint zelfstandig met halters",
   },
   personalTraining: {
-    src: wixImage("49ba32_9d2fa0e7cd79455da0a2809bce09bee0~mv2.jpg", 1000, 1200),
-    alt: "Personal trainer begeleidt een oefening in de privézaal",
+    src: wixImage("49ba32_8ac15c8d0cd64cf0a99e1258697411cd~mv2.jpg", 1000, 1300),
+    alt: "Trainer van Thehomegym kijkt geknield mee met de squat van een lid",
   },
   groupClass: {
     src: wixImage("49ba32_de18957fd00343979ffbc3872bf5a789~mv2.jpg", 1000, 1200),
