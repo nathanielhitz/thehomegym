@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Basis: warm papier en inkt. Eén thema over de hele site. ── */
+  --color-paper: #f7f5f2; /* paginachtergrond */
+  --color-paper-deep: #efece7; /* subtiel afwijkende sectie, zelfde familie */
+  --color-ink: #141517; /* koppen en bodytekst */
+  --color-muted: #6b6864; /* bijtekst en labels */
+
+  /* ── Eén accent, in twee dieptes ──────────────────────────────────────────
+     brick draagt tekst (knoppen, labels, links) en haalt daarom WCAG AA op
+     zowel paper (5.03:1) als paper-deep (4.65:1).
+     signal is het felle merkrood en wordt alleen gebruikt voor kleine
+     grafische tekens: de punt in het logo, sterren, de status-stip en het
+     18+ cijfer. Daar geldt de 3:1-eis, die het ruim haalt.               */
+  --color-brick: #c3350e;
+  --color-brick-deep: #a82c0b;
+  --color-signal: #e63b10;
+  --color-clay: #f6ded6; /* zachte accentvlakken en badges */
+
+  --color-line: #e3dfd9;
+  --color-line-strong: #cfc9c0;
+
+  /* ── Typografie ── */
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+  --font-display: var(--font-archivo), system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+body {
+  background-color: #f7f5f2;
+  color: #141517;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Display-koppen in Archivo: strak, zwaar en links uitgelijnd. */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Cijfers in prijzen, tijden en roosters lijnen netjes uit. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scroll-reveal. Valt terug op zichtbaar wanneer JS uitstaat. */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-d1 {
+  transition-delay: 0.07s;
+}
+.reveal-d2 {
+  transition-delay: 0.14s;
+}
+.reveal-d3 {
+  transition-delay: 0.21s;
+}
+.reveal-d4 {
+  transition-delay: 0.28s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brick);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #efece7;
+}
+::-webkit-scrollbar-thumb {
+  background: #cfc9c0;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6b6864;
+}
