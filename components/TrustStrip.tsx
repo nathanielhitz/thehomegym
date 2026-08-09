@@ -3,6 +3,25 @@ import { Star } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import { certifications, company } from "@/lib/content";
 
+function Logos() {
+  return (
+    <>
+      {certifications.map((cert) => (
+        <li key={cert.name} className="flex shrink-0 items-center">
+          <Image
+            src={cert.src}
+            alt={cert.name}
+            width={cert.width}
+            height={Math.round(cert.width * 0.42)}
+            className="h-auto w-auto max-h-9 object-contain"
+            style={{ maxWidth: cert.width }}
+          />
+        </li>
+      ))}
+    </>
+  );
+}
+
 export default function TrustStrip() {
   return (
     <section
@@ -32,19 +51,24 @@ export default function TrustStrip() {
             </span>
           </a>
 
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-5 opacity-75 grayscale">
-            {certifications.map((cert) => (
-              <li key={cert.name} className="flex items-center">
-                <Image
-                  src={cert.src}
-                  alt={cert.name}
-                  width={cert.width}
-                  height={Math.round(cert.width * 0.42)}
-                  className="h-auto w-auto max-h-9 object-contain"
-                  style={{ maxWidth: cert.width }}
-                />
-              </li>
-            ))}
+          {/* Mobiel: één doorlopend lint dat van rechts naar links schuift. */}
+          <div className="marquee -mx-5 self-stretch sm:-mx-8 lg:hidden">
+            <div className="marquee-track opacity-75 grayscale">
+              {[0, 1, 2].map((copy) => (
+                <ul
+                  key={copy}
+                  aria-hidden={copy > 0 || undefined}
+                  className="flex shrink-0 items-center gap-x-10 pr-10"
+                >
+                  <Logos />
+                </ul>
+              ))}
+            </div>
+          </div>
+
+          {/* Vanaf lg past alles naast elkaar, dan blijft het stilstaan. */}
+          <ul className="hidden items-center gap-x-8 gap-y-5 opacity-75 grayscale lg:flex lg:flex-wrap">
+            <Logos />
           </ul>
         </Reveal>
       </div>
