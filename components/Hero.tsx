@@ -15,7 +15,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_center] lg:object-center"
+        className="object-cover object-[62%_center] lg:object-[45%_center]"
       />
 
       {/* Scrims. De basislaag houdt de tekst leesbaar als de foto ooit door een

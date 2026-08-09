@@ -45,7 +45,7 @@ export const wixImage = (id: string, w: number, h: number) =>
 export const images = {
   // Full-bleed hero: eigen zaal, donkere wand links waar de tekst overheen valt.
   hero: {
-    src: wixImage("49ba32_854e20b2bf8c4da7b6797e8ecf019314~mv2.jpg", 2000, 1200),
+    src: wixImage("49ba32_854e20b2bf8c4da7b6797e8ecf019314~mv2.jpg", 2100, 1400),
     alt: "Trainer van Thehomegym legt een oefening uit bij het squatrek",
   },
   coaching: {
