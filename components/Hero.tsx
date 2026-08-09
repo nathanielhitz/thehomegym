@@ -35,12 +35,12 @@ export default function Hero() {
 
       <div className="relative w-full px-5 pt-32 pb-14 sm:px-8 sm:pb-20 lg:py-32 lg:pr-14 lg:pl-[max(2rem,calc((100vw-1240px)/2))]">
         <h1 className="max-w-[15ch] font-display text-[38px] leading-[1.03] font-extrabold text-paper sm:text-[52px] lg:text-[60px] xl:text-[66px]">
-          De kleinschalige sportschool van Heinenoord.
+          De persoonlijke sportschool van Heinenoord.
         </h1>
 
         <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-paper/85 sm:text-lg">
-          Trainen zonder de drukte van een massagym, met persoonlijke
-          begeleiding en een schema dat op jou is gemaakt.
+          Trainen zonder de drukte van een massagym, met een schema dat op jou
+          is gemaakt.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
