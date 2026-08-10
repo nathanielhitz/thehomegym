@@ -32,6 +32,27 @@
   box-sizing: border-box;
 }
 
+/* Hoogte van de vaste actiebalk op mobiel: rand + inhoud + de home-indicator
+   die Safari erbij zet zodra hij zijn eigen onderbalk wegschuift. De balk en de
+   onderrand van de hero lezen allebei deze waarde, zodat ze niet uit elkaar
+   kunnen lopen. Vanaf md verdwijnt de balk en valt de waarde terug op nul. */
+:root {
+  --cta-bar: calc(47px + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 768px) {
+  :root {
+    --cta-bar: 0px;
+  }
+}
+
+/* De hero vult altijd precies het zichtbare scherm. dvh volgt de adresbalk van
+   de browser terwijl die in- en uitschuift, dus er blijft nooit een strook van
+   de volgende sectie zichtbaar. vh is de terugval voor oudere browsers. */
+.hero-viewport {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 88px;
@@ -89,6 +110,32 @@ p {
   transition-delay: 0.28s;
 }
 
+/* Scroll-hint in de hero: een haarlijn waar een lichtpuntje doorheen zakt.
+   Vertelt dat er meer onder de vouw zit, nu de foto het scherm helemaal vult. */
+.scroll-hint {
+  position: relative;
+  overflow: hidden;
+  background-color: color-mix(in srgb, var(--color-paper) 30%, transparent);
+}
+.scroll-hint::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  height: 45%;
+  background: linear-gradient(to bottom, transparent, var(--color-paper));
+  animation: scroll-hint 2.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  70%,
+  100% {
+    transform: translateY(222%);
+  }
+}
+
 /* Logolint: schuift op smalle schermen door van rechts naar links en vervaagt
    aan beide randen, zodat het lint niet hard afgekapt lijkt. */
 .marquee {
@@ -128,6 +175,13 @@ p {
   }
   .marquee-track {
     animation: none;
+  }
+  /* Zonder beweging blijft de hint een stille, zachte streep. */
+  .scroll-hint::after {
+    animation: none;
+    transform: none;
+    height: 100%;
+    opacity: 0.55;
   }
   .reveal {
     opacity: 1;

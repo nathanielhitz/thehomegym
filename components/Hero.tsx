@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import OpenNowBadge from "@/components/OpenNowBadge";
 import { ctaMessages, images, whatsappHref } from "@/lib/content";
@@ -7,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[88dvh] items-end overflow-hidden lg:min-h-[100dvh] lg:items-center"
+      className="hero-viewport relative flex items-end overflow-hidden lg:items-center"
     >
       <Image
         src={images.hero.src}
@@ -33,7 +34,8 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink/55 to-transparent"
       />
 
-      <div className="relative w-full px-5 pt-32 pb-14 sm:px-8 sm:pb-20 lg:py-32 lg:pr-14 lg:pl-[max(2rem,calc((100vw-1240px)/2))]">
+      {/* De onderrand houdt de actiebalk vrij: balkhoogte plus rustruimte. */}
+      <div className="relative w-full px-5 pt-32 pb-[calc(var(--cta-bar)+2.5rem)] sm:px-8 sm:pb-[calc(var(--cta-bar)+3.5rem)] lg:py-32 lg:pr-14 lg:pl-[max(2rem,calc((100vw-1240px)/2))]">
         <h1 className="max-w-[15ch] font-display text-[38px] leading-[1.03] font-extrabold text-paper sm:text-[52px] lg:text-[60px] xl:text-[66px]">
           De persoonlijke sportschool van Heinenoord.
         </h1>
@@ -58,6 +60,15 @@ export default function Hero() {
         </div>
 
         <OpenNowBadge className="mt-8 bg-paper/95 backdrop-blur" />
+      </div>
+
+      {/* Scroll-hint, rechts uitgelijnd op dezelfde onderlijn als de badge. */}
+      <div
+        aria-hidden
+        className="absolute right-5 bottom-[calc(var(--cta-bar)+2.5rem)] flex flex-col items-center gap-2 sm:right-8 sm:bottom-[calc(var(--cta-bar)+3.5rem)] lg:right-14 lg:bottom-14"
+      >
+        <span className="scroll-hint h-8 w-px sm:h-11" />
+        <CaretDown size={13} weight="bold" className="text-paper/80" />
       </div>
     </section>
   );
