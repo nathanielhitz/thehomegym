@@ -59,7 +59,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        <OpenNowBadge className="mt-8 bg-paper/95 backdrop-blur" />
+        <OpenNowBadge className="mt-8 bg-paper/95" />
       </div>
 
       {/* Scroll-hint, rechts uitgelijnd op dezelfde onderlijn als de badge. */}

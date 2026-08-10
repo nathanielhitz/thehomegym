@@ -11,6 +11,8 @@ export default function Navbar({ overHero = false }: { overHero?: boolean }) {
 
   // Boven een full-bleed hero staat de balk transparant met lichte tekst.
   // Zodra je scrolt of het menu opent, valt hij terug op de papieren balk.
+  // De balk staat altijd fixed op dezelfde hoogte: bij het omslaan veranderen
+  // alleen kleuren, geen positionering of afmeting, dus de flow blijft staan.
   const light = overHero && !scrolled && !open;
 
   // Een sentinel bovenaan de pagina in plaats van een scroll-listener:
@@ -53,7 +55,7 @@ export default function Navbar({ overHero = false }: { overHero?: boolean }) {
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
           light
             ? "border-b border-transparent bg-transparent"
-            : "border-b border-line bg-paper/94 backdrop-blur-md"
+            : "border-b border-line bg-paper/96"
         }`}
       >
         <div className="mx-auto flex h-[68px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-8 md:h-[76px]">

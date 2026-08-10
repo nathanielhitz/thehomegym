@@ -32,12 +32,16 @@
   box-sizing: border-box;
 }
 
-/* Hoogte van de vaste actiebalk op mobiel: rand + inhoud + de home-indicator
-   die Safari erbij zet zodra hij zijn eigen onderbalk wegschuift. De balk en de
-   onderrand van de hero lezen allebei deze waarde, zodat ze niet uit elkaar
-   kunnen lopen. Vanaf md verdwijnt de balk en valt de waarde terug op nul. */
+/* Hoogte van de vaste actiebalk op mobiel: rand plus inhoud, zonder de veilige
+   zone onderaan. Dit is de hoogte die de balk heeft wanneer je bovenaan de
+   pagina staat en Safari zijn onderbalk toont — precies de situatie waarin je
+   de hero in rust ziet. Bewust zonder env(safe-area-inset-bottom): die waarde
+   springt tijdens het scrollen mee met het in- en uitklappen van de browserbalk
+   en zou de hero-inhoud dan midden in een swipe verschuiven. De balk zelf leest
+   de veilige zone wel uit, maar die staat fixed en beweegt niets in de flow.
+   Vanaf md verdwijnt de balk en valt de waarde terug op nul. */
 :root {
-  --cta-bar: calc(47px + env(safe-area-inset-bottom, 0px));
+  --cta-bar: 47px;
 }
 @media (min-width: 768px) {
   :root {
@@ -45,12 +49,16 @@
   }
 }
 
-/* De hero vult altijd precies het zichtbare scherm. dvh volgt de adresbalk van
-   de browser terwijl die in- en uitschuift, dus er blijft nooit een strook van
-   de volgende sectie zichtbaar. vh is de terugval voor oudere browsers. */
+/* De hero vult het zichtbare scherm met svh: de hoogte van de viewport terwijl
+   de adresbalk van mobiele Safari is uitgeklapt. Bewust géén dvh — die waarde
+   verandert mee terwijl de browserbalk tijdens het scrollen in- en uitschuift,
+   waardoor de hero midden in een swipe hoger wordt en alles eronder verspringt.
+   svh ligt vast zolang je scrolt en is in rust (bovenaan de pagina, balk
+   uitgeklapt) exact de zichtbare hoogte. vh is de terugval voor oude browsers
+   en is op desktop gelijk aan svh, dus daar verandert er niets. */
 .hero-viewport {
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
 }
 
 html {

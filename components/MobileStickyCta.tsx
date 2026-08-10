@@ -9,7 +9,7 @@ export default function MobileStickyCta() {
   return (
     <nav
       aria-label="Snelle acties"
-      className="fixed inset-x-0 bottom-0 z-50 flex min-h-[var(--cta-bar)] border-t border-line bg-paper/96 backdrop-blur md:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 flex min-h-[var(--cta-bar)] border-t border-line bg-paper/98 md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       <a
