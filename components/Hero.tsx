@@ -16,22 +16,22 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[38%_center] lg:object-[45%_center]"
+        className="object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
       />
 
-      {/* Scrims. De basislaag houdt de tekst leesbaar als de foto ooit door een
-          lichtere wordt vervangen, de gradiënt legt het zwaartepunt links op
-          desktop en onderaan op mobiel. De foto is zelf al donker, dus beide
-          lagen blijven licht genoeg om de zaal herkenbaar te houden. */}
-      <div aria-hidden className="absolute inset-0 bg-ink/10" />
+      {/* Scrim. De foto is opgehaald met brightness zodat de zaal leesbaar wordt;
+          in ruil daarvoor loopt de gradiënt steiler naar de tekstzone toe: zwaar
+          onderaan (mobiel) en links (desktop), en al voor de helft weggevallen
+          zodat de zaal er juist bovenuit komt. Zo wint het beeld licht zonder
+          dat de koppen contrast inleveren. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink/88 via-ink/50 to-transparent lg:bg-gradient-to-r lg:from-ink/82 lg:via-ink/42 lg:to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-ink/92 via-ink/72 via-45% to-transparent lg:bg-gradient-to-r lg:from-ink/88 lg:via-ink/60 lg:via-50% lg:to-transparent"
       />
       {/* Extra donkere band bovenaan, zodat de transparante navigatie leesbaar blijft */}
       <div
         aria-hidden
-        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink/55 to-transparent"
+        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink/45 to-transparent"
       />
 
       {/* De onderrand houdt de actiebalk vrij: balkhoogte plus rustruimte. */}
@@ -40,7 +40,7 @@ export default function Hero() {
           De persoonlijke sportschool van Heinenoord.
         </h1>
 
-        <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-paper/85 sm:text-lg">
+        <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-paper/92 sm:text-lg">
           Trainen zonder de drukte van een massagym, met een schema dat op jou
           is gemaakt.
         </p>
