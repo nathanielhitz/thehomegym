@@ -16,7 +16,7 @@ export default function Hero() {
       <HeroVideo
         src="/hero-video.mp4"
         poster={images.hero.src}
-        className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[0.7] saturate-[0.85] lg:object-[45%_center]"
+        className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[0.7] saturate-[0.85] lg:object-[45%_center] lg:brightness-[0.8] lg:saturate-[0.9]"
       />
       <img
         src={images.hero.src}
@@ -31,7 +31,7 @@ export default function Hero() {
           zichtbaar blijft maar nooit met de koppen en knoppen concurreert. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 via-50% to-ink/25 lg:bg-gradient-to-r lg:from-ink/92 lg:via-ink/70 lg:via-55% lg:to-ink/20"
+        className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 via-50% to-ink/25 lg:bg-gradient-to-r lg:from-ink/85 lg:via-ink/55 lg:via-50% lg:to-ink/5"
       />
       {/* Extra donkere band bovenaan, zodat de transparante navigatie leesbaar blijft */}
       <div
