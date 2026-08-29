@@ -39,7 +39,7 @@ function Price({ from, note }: { from: string; note: string }) {
 export default function Offers() {
   return (
     <section id="aanbod" className="bg-paper-deep">
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14">
         <Reveal className="max-w-[620px]">
           <p className="text-[12px] font-semibold tracking-[0.18em] text-brick uppercase">
             Aanbod
@@ -53,7 +53,7 @@ export default function Offers() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:grid-cols-12">
+        <div className="mt-8 grid gap-4 md:grid-cols-12">
           {/* Grote tegel */}
           <Reveal className="md:col-span-7">
             <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper">

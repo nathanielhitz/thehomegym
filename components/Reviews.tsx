@@ -7,7 +7,7 @@ export default function Reviews() {
   return (
     <section
       aria-labelledby="reviews-titel"
-      className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14"
     >
       <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <div className="max-w-[420px]">
@@ -33,7 +33,7 @@ export default function Reviews() {
         </Button>
       </Reveal>
 
-      <div className="mt-12 gap-4 sm:columns-2 lg:columns-3">
+      <div className="mt-8 gap-4 sm:columns-2 lg:columns-3">
         {reviews.map((review, i) => (
           <Reveal
             key={review.name}

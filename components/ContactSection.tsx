@@ -19,7 +19,7 @@ import {
 export default function ContactSection() {
   return (
     <section id="contact" className="bg-paper-deep">
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14">
         <Reveal className="max-w-[620px]">
           <p className="text-[12px] font-semibold tracking-[0.18em] text-brick uppercase">
             Contact
@@ -33,7 +33,7 @@ export default function ContactSection() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-[1.1fr_1fr]">
+        <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_1fr]">
           {/* Formulier */}
           <Reveal>
             <div

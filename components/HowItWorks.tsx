@@ -6,7 +6,7 @@ export default function HowItWorks() {
   return (
     <section
       id="hoe-het-werkt"
-      className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14"
     >
       <Reveal className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <h2 className="max-w-[540px] font-display text-[32px] leading-[1.08] font-extrabold text-ink sm:text-[40px] lg:text-[46px]">

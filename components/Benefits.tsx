@@ -27,7 +27,7 @@ export default function Benefits() {
   return (
     <section
       id="waarom"
-      className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14"
     >
       <Reveal className="max-w-[600px]">
         <h2 className="font-display text-[32px] leading-[1.08] font-extrabold text-ink sm:text-[40px] lg:text-[46px]">
@@ -35,7 +35,7 @@ export default function Benefits() {
         </h2>
       </Reveal>
 
-      <div className="mt-12 grid gap-4 md:grid-cols-12">
+      <div className="mt-8 grid gap-4 md:grid-cols-12">
         {/* Grote fotocel */}
         <Reveal className="md:col-span-7">
           <article className="relative flex h-full min-h-[300px] flex-col justify-end overflow-hidden rounded-2xl p-7 text-paper sm:min-h-[360px] sm:p-9">

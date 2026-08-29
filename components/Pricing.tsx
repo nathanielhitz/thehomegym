@@ -18,7 +18,7 @@ const membershipMessage = (name: string, duration: string) =>
 export default function Pricing() {
   return (
     <section id="tarieven" className="bg-paper-deep">
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14">
         <Reveal className="max-w-[640px]">
           <p className="text-[12px] font-semibold tracking-[0.18em] text-brick uppercase">
             Tarieven
@@ -34,7 +34,7 @@ export default function Pricing() {
         </Reveal>
 
         {/* Lidmaatschappen */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {memberships.map((plan, i) => (
             <Reveal key={plan.id} delay={(i % 4) as 0 | 1 | 2 | 3}>
               <article

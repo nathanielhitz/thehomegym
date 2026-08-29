@@ -15,7 +15,7 @@ export default function Schedule() {
   return (
     <section
       id="rooster"
-      className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14"
     >
       <Reveal className="max-w-[620px]">
         <h2 className="font-display text-[32px] leading-[1.08] font-extrabold text-ink sm:text-[40px] lg:text-[46px]">
@@ -27,7 +27,7 @@ export default function Schedule() {
         </p>
       </Reveal>
 
-      <div className="mt-12 grid gap-4 lg:grid-cols-[1.55fr_1fr]">
+      <div className="mt-8 grid gap-4 lg:grid-cols-[1.55fr_1fr]">
         {/* Groepslesrooster */}
         <Reveal>
           <div className="h-full overflow-hidden rounded-2xl border border-line bg-paper">

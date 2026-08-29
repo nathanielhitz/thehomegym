@@ -6,7 +6,7 @@ export default function Faq() {
   return (
     <section
       aria-labelledby="faq-titel"
-      className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28"
+      className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14"
     >
       <Reveal className="max-w-[520px]">
         <h2
@@ -17,7 +17,7 @@ export default function Faq() {
         </h2>
       </Reveal>
 
-      <dl className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+      <dl className="mt-8 grid gap-x-12 gap-y-10 md:grid-cols-2">
         {faqs.map((item, i) => (
           <Reveal key={item.q} delay={(i % 2) as 0 | 1}>
             <div className="border-t border-line-strong pt-5">

@@ -5,7 +5,7 @@ import { company, equipmentBrands, images, team } from "@/lib/content";
 export default function Story() {
   return (
     <section id="team" className="bg-paper-deep">
-      <div className="mx-auto w-full max-w-[1240px] px-5 py-20 sm:px-8 md:py-28">
+      <div className="mx-auto w-full max-w-[1240px] px-5 py-10 sm:px-8 md:py-14">
         {/* Het verhaal */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
@@ -43,7 +43,7 @@ export default function Story() {
         </div>
 
         {/* Het team */}
-        <div className="mt-20 md:mt-28">
+        <div className="mt-10 md:mt-14">
           <Reveal>
             <h3 className="font-display text-[26px] leading-tight font-extrabold text-ink sm:text-[30px]">
               De trainers
