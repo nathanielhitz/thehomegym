@@ -81,7 +81,9 @@ van Wix.
 
 De hero heeft een achtergrondvideo (`public/hero-video.mp4`, 3,3 MB, 1280px
 breed, 38 s, geen geluid, autoplay). De foto `Hero.jpeg` dient als poster en
-als stilstaand beeld voor bezoekers met `prefers-reduced-motion`. Het
+als stilstaand beeld voor bezoekers met `prefers-reduced-motion`. De video
+staat bewust donker (brightness 0.7, licht ontkleurd) en speelt op 0.75x af
+(`HeroVideo.tsx`), zodat de beweging niet met tekst en knoppen concurreert. Het
 onbewerkte origineel (14 MB, 1080p met audio) staat in `bronbestanden/` en
 wordt niet gedeployd. Opnieuw comprimeren gaat met:
 `ffmpeg -i bronbestanden/hero-video-origineel.mp4 -vf scale=1280:-2 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -movflags +faststart public/hero-video.mp4`

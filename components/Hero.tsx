@@ -1,5 +1,6 @@
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
+import HeroVideo from "@/components/HeroVideo";
 import OpenNowBadge from "@/components/OpenNowBadge";
 import { ctaMessages, images, whatsappHref } from "@/lib/content";
 
@@ -9,21 +10,14 @@ export default function Hero() {
       id="top"
       className="hero-viewport relative flex items-end overflow-hidden lg:items-center"
     >
-      {/* Achtergrondvideo: autoplay kan alleen zonder geluid, playsInline
-          voorkomt fullscreen op iOS. De foto blijft poster/fallback, ook voor
-          bezoekers die animaties uit hebben staan (dan speelt de video niet). */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+      {/* Video bewust donker en iets ontkleurd: beweging trekt al genoeg
+          aandacht, de koppen en knoppen moeten winnen. De foto blijft poster
+          en stilstaand beeld voor bezoekers met prefers-reduced-motion. */}
+      <HeroVideo
+        src="/hero-video.mp4"
         poster={images.hero.src}
-        aria-hidden
-        className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[1.1] lg:object-[45%_center]"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+        className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[0.7] saturate-[0.85] lg:object-[45%_center]"
+      />
       <img
         src={images.hero.src}
         alt=""
@@ -31,14 +25,13 @@ export default function Hero() {
         className="hero-video-still absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
       />
 
-      {/* Scrim. De foto is opgehaald met brightness zodat de zaal leesbaar wordt;
-          in ruil daarvoor loopt de gradiënt steiler naar de tekstzone toe: zwaar
-          onderaan (mobiel) en links (desktop), en al voor de helft weggevallen
-          zodat de zaal er juist bovenuit komt. Zo wint het beeld licht zonder
-          dat de koppen contrast inleveren. */}
+      {/* Scrim. De video is al donker gezet; de gradiënt houdt daarbovenop
+          de tekstzone (onder op mobiel, links op desktop) bijna effen donker en
+          loopt uit naar een lichte sluier aan de andere kant, zodat de zaal
+          zichtbaar blijft maar nooit met de koppen en knoppen concurreert. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink/92 via-ink/72 via-45% to-transparent lg:bg-gradient-to-r lg:from-ink/88 lg:via-ink/60 lg:via-50% lg:to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 via-50% to-ink/25 lg:bg-gradient-to-r lg:from-ink/92 lg:via-ink/70 lg:via-55% lg:to-ink/20"
       />
       {/* Extra donkere band bovenaan, zodat de transparante navigatie leesbaar blijft */}
       <div
