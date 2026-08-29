@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import OpenNowBadge from "@/components/OpenNowBadge";
@@ -10,13 +9,26 @@ export default function Hero() {
       id="top"
       className="hero-viewport relative flex items-end overflow-hidden lg:items-center"
     >
-      <Image
+      {/* Achtergrondvideo: autoplay kan alleen zonder geluid, playsInline
+          voorkomt fullscreen op iOS. De foto blijft poster/fallback, ook voor
+          bezoekers die animaties uit hebben staan (dan speelt de video niet). */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster={images.hero.src}
+        aria-hidden
+        className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[1.1] lg:object-[45%_center]"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+      <img
         src={images.hero.src}
-        alt={images.hero.alt}
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
+        alt=""
+        aria-hidden
+        className="hero-video-still absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
       />
 
       {/* Scrim. De foto is opgehaald met brightness zodat de zaal leesbaar wordt;

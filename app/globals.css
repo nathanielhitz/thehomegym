@@ -223,3 +223,17 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: #6b6864;
 }
+
+/* Achtergrondvideo in de hero. Bij prefers-reduced-motion verbergen we de
+   video en tonen we de stilstaande foto op dezelfde plek. */
+.hero-video-still {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+  .hero-video-still {
+    display: block;
+  }
+}

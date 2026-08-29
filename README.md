@@ -79,7 +79,14 @@ gedownload. Bij oplevering moeten deze vervangen worden door originelen van
 de klant, of ten minste door een eigen CDN, zodat de site niet afhankelijk is
 van Wix.
 
-De hero is full-bleed met de foto van de trainer bij het squatrek. Die is
+De hero heeft een achtergrondvideo (`public/hero-video.mp4`, 3,3 MB, 1280px
+breed, 38 s, geen geluid, autoplay). De foto `Hero.jpeg` dient als poster en
+als stilstaand beeld voor bezoekers met `prefers-reduced-motion`. Het
+onbewerkte origineel (14 MB, 1080p met audio) staat in `bronbestanden/` en
+wordt niet gedeployd. Opnieuw comprimeren gaat met:
+`ffmpeg -i bronbestanden/hero-video-origineel.mp4 -vf scale=1280:-2 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -movflags +faststart public/hero-video.mp4`
+
+De poster/fallback is de foto van de trainer bij het squatrek. Die is
 gekozen omdat het de enige eigen liggende foto is met een donkere wand links,
 precies waar de tekst overheen valt. De scrims in `Hero.tsx` zijn zo gezet dat
 de slechtste pixel achter de tekst op 5,4:1 zit (desktop) en 5,2:1 (mobiel),
