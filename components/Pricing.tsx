@@ -1,6 +1,7 @@
 import { Check } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import PromoBadge from "@/components/PromoBadge";
 import {
   memberships,
   membershipIncludes,
@@ -31,6 +32,7 @@ export default function Pricing() {
             automatisch over in een maandelijks opzegbaar abonnement met een
             opzegtermijn van één maand.
           </p>
+          <PromoBadge tone="clay" className="mt-5" />
         </Reveal>
 
         {/* Lidmaatschappen */}
@@ -117,7 +119,7 @@ export default function Pricing() {
               {registrationFee.actionRunning ? (
                 <>
                   <strong className="font-semibold">
-                    {registrationFee.actionLabel}.
+                    Nu geen inschrijfgeld.
                   </strong>{" "}
                   Normaal betaal je &euro;{registrationFee.standard} eenmalig
                   inschrijfgeld.

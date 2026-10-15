@@ -2,6 +2,7 @@ import { CaretDown } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import HeroVideo from "@/components/HeroVideo";
 import OpenNowBadge from "@/components/OpenNowBadge";
+import PromoBadge from "@/components/PromoBadge";
 import { ctaMessages, images, whatsappHref } from "@/lib/content";
 
 export default function Hero() {
@@ -72,7 +73,10 @@ export default function Hero() {
           </Button>
         </div>
 
-        <OpenNowBadge className="mt-8 bg-paper/95" />
+        <div className="mt-6 flex flex-wrap items-center gap-2.5">
+          <PromoBadge />
+          <OpenNowBadge className="bg-paper/95" />
+        </div>
       </div>
 
       {/* Scroll-hint, rechts uitgelijnd op dezelfde onderlijn als de badge. */}

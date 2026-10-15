@@ -3,6 +3,8 @@
 // Er zijn geen prijzen, cijfers, reviews of claims bijverzonnen.
 // Open punten die nog bevestigd moeten worden staan in README.md.
 
+import { promo } from "@/content/promo";
+
 export const company = {
   name: "Thehomegym",
   tagline: "Sportschool in Heinenoord",
@@ -340,12 +342,11 @@ export const membershipIncludes = [
   "Professionele begeleiding",
 ];
 
-// Inschrijfgeld is normaal 15 euro. De site voert op dit moment een actie
-// waarbij dat vervalt. Zie README.md: bevestigen of de actie nog loopt.
+// Inschrijfgeld en de actie daarop staan in content/promo.ts (aan/uit-flag).
 export const registrationFee = {
-  standard: "15",
-  actionRunning: true,
-  actionLabel: "Nu geen inschrijfgeld",
+  standard: promo.standardFee,
+  actionRunning: promo.active,
+  actionLabel: promo.label,
 };
 
 export const stripCards = [
