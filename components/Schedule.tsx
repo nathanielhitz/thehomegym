@@ -2,14 +2,9 @@ import Image from "next/image";
 import { UsersThree } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import ClassCta from "@/components/ClassCta";
 import OpenNowBadge from "@/components/OpenNowBadge";
-import {
-  company,
-  ctaMessages,
-  groupClasses,
-  openingHours,
-  whatsappHref,
-} from "@/lib/content";
+import { company, groupClasses, openingHours } from "@/lib/content";
 
 export default function Schedule() {
   return (
@@ -68,6 +63,7 @@ export default function Schedule() {
                     <p className="mt-2 max-w-[56ch] text-[15px] leading-relaxed text-muted">
                       {item.body}
                     </p>
+                    <ClassCta name={item.name} day={item.day} time={item.time} />
                   </div>
 
                   <span className="inline-flex shrink-0 items-center gap-1.5 self-start rounded-full border border-line-strong px-3 py-1.5 text-[13px] text-ink tnum">
@@ -78,15 +74,10 @@ export default function Schedule() {
               ))}
             </ul>
 
-            <div className="border-t border-line px-6 py-5 sm:px-8">
-              <Button
-                href={whatsappHref(ctaMessages.groepsles)}
-                variant="secondary"
-                external
-              >
-                Gratis proefles aanvragen
-              </Button>
-            </div>
+            <p className="border-t border-line px-6 py-4 text-[14px] leading-relaxed text-muted sm:px-8">
+              Je eerste groepsles is gratis en je zit nergens aan vast. Daarna
+              kies je een strippenkaart of een lidmaatschap met lessen.
+            </p>
           </div>
         </Reveal>
 
@@ -134,6 +125,8 @@ export default function Schedule() {
                 variant="quiet"
                 external
                 className="mt-3 text-[15px]"
+                event="route_click"
+                eventParams={{ location: "rooster" }}
               >
                 Route plannen
               </Button>

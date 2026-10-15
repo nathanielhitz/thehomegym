@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { CheckCircle, WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import { whatsappHref } from "@/lib/content";
+import { useHandoff } from "@/lib/handoff";
 import { track } from "@/lib/track";
 
 const moments = [
@@ -49,6 +50,10 @@ export default function ProefweekForm() {
   const doneRef = useRef<HTMLDivElement | null>(null);
 
   const firstName = name.trim().split(/\s+/)[0] || "";
+
+  // Vanuit het rooster komt de gekozen les binnen; die zetten we in het
+  // opmerkingenveld zodat de bezoeker alleen nog naam en contact invult.
+  useHandoff("proefweek-note", setNote);
 
   const whatsappMessage = () => {
     const lines = [
