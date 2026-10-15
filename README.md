@@ -87,9 +87,17 @@ wijzigen doe je daar, niet in de componenten.
 - Events: `proefweek_click` (location: hero, nav, menu, sticky, stappen),
   `whatsapp_click` (location: hero, sticky, aanbod, faq, contact, footer,
   formulier, bedankt), `route_click` (sticky, contact), `tarief_click`
-  (pakket), `form_submit`, `form_success`, `form_error`. `faq_open` en
-  `doel_click` staan in het type maar vuren nog nergens: de FAQ is geen
-  accordeon en er is nog geen doelen-sectie.
+  (pakket), `form_submit`, `form_success`, `form_error`, `faq_open`
+  (vraag), `doel_click` (doel).
+- Stappen om dit live te zetten staan in `TODO-LIVE.md`.
+
+## Instelbare content
+
+- `content/promo.ts`: actie "geen inschrijfgeld", aan/uit en tekst.
+- `content/doelen.ts`: de doel-chips (Afvallen, Sterker worden, ...) en de
+  zin die bij het aanbod verschijnt na een klik.
+- `lib/handoff.ts`: doorgeefluik tussen rooster → formulier en chips →
+  aanbod (CustomEvent plus sessionStorage, geen extra dependency).
 
 ## Beeldmateriaal
 
