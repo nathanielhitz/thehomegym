@@ -17,6 +17,8 @@ export default function HowItWorks() {
           withArrow
           size="lg"
           className="self-start md:self-auto"
+          event="proefweek_click"
+          eventParams={{ location: "stappen" }}
         >
           Gratis proefweek
         </Button>

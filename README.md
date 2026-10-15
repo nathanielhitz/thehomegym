@@ -67,9 +67,29 @@ wijzigen doe je daar, niet in de componenten.
 - Groepslesrooster stond niet op de site ("check de app"). Nu volledig
   zichtbaar met dag, tijd en maximaal aantal deelnemers.
 - Inschrijfformulier vroeg direct om NAW en bankgegevens. De proefweek-flow
-  vraagt nu vier dingen en zet een WhatsApp-bericht klaar.
+  vraagt nu vijf dingen (naam, bereikbaarheid, moment, bron, opmerking) en
+  gaat via `/api/proefweek` naar `sendLead()`. WhatsApp blijft als
+  alternatief beschikbaar met een voorgevuld bericht.
 - `LocalBusiness`/`HealthClub`- en `FAQPage`-schema toegevoegd.
 - Sticky mobiele actiebalk met WhatsApp, route en proefweek.
+
+## Leads en tracking (voorbereid, nog niet gekoppeld)
+
+- `app/api/proefweek/route.ts` valideert (naam en bereikbaarheid verplicht),
+  controleert de honeypot (`website`) en roept `sendLead()` aan.
+- `lib/leads.ts` → `sendLead(lead)` is nu een stub: logt `[LEAD]` in de
+  serverconsole en wacht 600 ms. Vervangen door Resend of SMTP zonder de
+  interface te veranderen. Variabelen staan klaar in `.env.example`
+  (`RESEND_API_KEY`, `LEAD_TO_EMAIL`).
+- `lib/track.ts` → `track(event, params)` stuurt naar `window.gtag` als die
+  bestaat, anders `console.debug('[track]', ...)`. GA4 wordt alleen geladen
+  als `NEXT_PUBLIC_GA_ID` gezet is (`app/layout.tsx`).
+- Events: `proefweek_click` (location: hero, nav, menu, sticky, stappen),
+  `whatsapp_click` (location: hero, sticky, aanbod, faq, contact, footer,
+  formulier, bedankt), `route_click` (sticky, contact), `tarief_click`
+  (pakket), `form_submit`, `form_success`, `form_error`. `faq_open` en
+  `doel_click` staan in het type maar vuren nog nergens: de FAQ is geen
+  accordeon en er is nog geen doelen-sectie.
 
 ## Beeldmateriaal
 

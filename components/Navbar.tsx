@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { navLinks } from "@/lib/content";
+import { track } from "@/lib/track";
 
 export default function Navbar({ overHero = false }: { overHero?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
@@ -90,6 +91,7 @@ export default function Navbar({ overHero = false }: { overHero?: boolean }) {
           <div className="flex items-center gap-3">
             <Link
               href="/#proefweek"
+              onClick={() => track("proefweek_click", { location: "nav" })}
               className="hidden rounded-full bg-brick px-5 py-2.5 text-[15px] font-semibold tracking-tight text-paper transition-[background-color,transform] duration-200 hover:bg-brick-deep active:scale-[0.98] sm:inline-flex"
             >
               Gratis proefweek
@@ -148,7 +150,10 @@ export default function Navbar({ overHero = false }: { overHero?: boolean }) {
           ))}
           <Link
             href="/#proefweek"
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              setOpen(false);
+              track("proefweek_click", { location: "menu" });
+            }}
             style={{ transitionDelay: `${60 + navLinks.length * 45}ms` }}
             className={`mt-8 inline-flex items-center justify-center rounded-full bg-brick px-6 py-4 text-base font-semibold text-paper transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"

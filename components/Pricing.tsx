@@ -77,6 +77,8 @@ export default function Pricing() {
                     external
                     variant={plan.highlight ? "primary" : "secondary"}
                     className="w-full"
+                    event="tarief_click"
+                    eventParams={{ pakket: plan.id, location: "tarieven" }}
                   >
                     Word lid
                   </Button>

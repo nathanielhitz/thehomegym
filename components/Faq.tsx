@@ -41,6 +41,8 @@ export default function Faq() {
           href={whatsappHref(ctaMessages.vraag)}
           external
           className="shrink-0"
+          event="whatsapp_click"
+          eventParams={{ location: "faq" }}
         >
           Stel je vraag
         </Button>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Instrument_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import MobileStickyCta from "@/components/MobileStickyCta";
@@ -40,6 +41,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 };
+
+// GA4 laadt alleen als NEXT_PUBLIC_GA_ID gezet is. Zonder die variabele
+// vallen alle events uit lib/track.ts terug op de browserconsole.
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 const dayNames: Record<number, string> = {
   1: "Monday",
@@ -123,6 +128,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <MobileStickyCta />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

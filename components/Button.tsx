@@ -1,5 +1,8 @@
+"use client";
+
 import type { ReactNode } from "react";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { track, type TrackEvent, type TrackParams } from "@/lib/track";
 
 type Variant = "primary" | "secondary" | "quiet";
 
@@ -26,6 +29,8 @@ export default function Button({
   external = false,
   withArrow = false,
   className = "",
+  event,
+  eventParams,
 }: {
   href: string;
   children: ReactNode;
@@ -34,6 +39,9 @@ export default function Button({
   external?: boolean;
   withArrow?: boolean;
   className?: string;
+  /** Trackingevent dat vuurt bij een klik (lib/track.ts). */
+  event?: TrackEvent;
+  eventParams?: TrackParams;
 }) {
   const sizeClass = variant === "quiet" ? "" : sizes[size];
 
@@ -43,6 +51,7 @@ export default function Button({
       {...(external
         ? { target: "_blank", rel: "noopener noreferrer" }
         : {})}
+      onClick={event ? () => track(event, eventParams) : undefined}
       className={`${base} ${variants[variant]} ${sizeClass} ${className}`}
     >
       {children}

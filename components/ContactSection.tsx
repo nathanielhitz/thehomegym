@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import OpenNowBadge from "@/components/OpenNowBadge";
 import ProefweekForm from "@/components/ProefweekForm";
+import TrackedLink from "@/components/TrackedLink";
 import {
   company,
   ctaMessages,
@@ -44,8 +45,7 @@ export default function ContactSection() {
                 Proefweek aanvragen
               </h3>
               <p className="mt-2 mb-7 text-[15px] leading-relaxed text-muted">
-                Vier vragen, meer niet. Betaalgegevens hoef je nu nog niet in
-                te vullen.
+                Vijf korte vragen, meer niet. Je hoort binnen 24 uur van ons.
               </p>
               <ProefweekForm />
             </div>
@@ -68,14 +68,16 @@ export default function ContactSection() {
                       aria-hidden
                     />
                     <div>
-                      <a
+                      <TrackedLink
                         href={whatsappHref(ctaMessages.vraag)}
                         target="_blank"
                         rel="noopener noreferrer"
+                        event="whatsapp_click"
+                        eventParams={{ location: "contact" }}
                         className="text-[16px] font-medium text-ink underline-offset-4 hover:underline tnum"
                       >
                         {company.whatsappDisplay}
-                      </a>
+                      </TrackedLink>
                       <p className="mt-1 text-[14px] text-muted">
                         Dit nummer is alleen bereikbaar via WhatsApp. Appen gaat
                         bij ons een stuk sneller dan bellen.
@@ -124,7 +126,12 @@ export default function ContactSection() {
                 </ul>
 
                 <div className="mt-7 flex flex-wrap items-center gap-3">
-                  <Button href={company.mapsUrl} external>
+                  <Button
+                    href={company.mapsUrl}
+                    external
+                    event="route_click"
+                    eventParams={{ location: "contact" }}
+                  >
                     Route plannen
                   </Button>
                   <OpenNowBadge />

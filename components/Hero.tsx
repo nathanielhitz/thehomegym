@@ -51,7 +51,13 @@ export default function Hero() {
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button href="#proefweek" size="lg" withArrow>
+          <Button
+            href="#proefweek"
+            size="lg"
+            withArrow
+            event="proefweek_click"
+            eventParams={{ location: "hero" }}
+          >
             Gratis proefweek
           </Button>
           <Button
@@ -59,6 +65,8 @@ export default function Hero() {
             variant="secondary"
             size="lg"
             external
+            event="whatsapp_click"
+            eventParams={{ location: "hero" }}
           >
             App ons
           </Button>

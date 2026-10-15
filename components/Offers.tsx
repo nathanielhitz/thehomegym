@@ -78,7 +78,12 @@ export default function Offers() {
                 </div>
                 <div className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-6">
                   <Price from={fitness.priceFrom} note={fitness.priceNote} />
-                  <Button href="#tarieven" variant="secondary">
+                  <Button
+                    href="#tarieven"
+                    variant="secondary"
+                    event="tarief_click"
+                    eventParams={{ pakket: "fitness", location: "aanbod" }}
+                  >
                     Bekijk tarieven
                   </Button>
                 </div>
@@ -116,6 +121,8 @@ export default function Offers() {
                       variant="quiet"
                       external
                       className="mt-3 text-[15px]"
+                      event="whatsapp_click"
+                      eventParams={{ location: "aanbod", onderwerp: "personal-training" }}
                     >
                       Gratis intake aanvragen
                     </Button>

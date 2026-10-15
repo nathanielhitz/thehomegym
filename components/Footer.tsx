@@ -1,4 +1,5 @@
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 import {
   FacebookLogo,
   InstagramLogo,
@@ -78,14 +79,16 @@ export default function Footer() {
             </h2>
             <ul className="mt-4 space-y-2.5 text-[15px] text-muted">
               <li>
-                <a
+                <TrackedLink
                   href={whatsappHref(ctaMessages.vraag)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  event="whatsapp_click"
+                  eventParams={{ location: "footer" }}
                   className="underline-offset-4 transition-colors duration-200 hover:text-ink hover:underline tnum"
                 >
                   {company.whatsappDisplay} (WhatsApp)
-                </a>
+                </TrackedLink>
               </li>
               <li>
                 <a
