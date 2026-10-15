@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Check } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import GoalNote from "@/components/GoalNote";
 import { ctaMessages, offers, whatsappHref } from "@/lib/content";
 
 const [fitness, personalTraining, groepslessen] = offers;
@@ -51,6 +52,7 @@ export default function Offers() {
             Vrij trainen wanneer het jou uitkomt, één op één met een vaste
             trainer, of in een groepsles met maximaal tien man.
           </p>
+          <GoalNote />
         </Reveal>
 
         <div className="mt-8 grid gap-4 md:grid-cols-12">

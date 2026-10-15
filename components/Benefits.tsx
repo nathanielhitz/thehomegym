@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import GoalChips from "@/components/GoalChips";
 import { benefits, company, images } from "@/lib/content";
 
 const byId = Object.fromEntries(benefits.map((b) => [b.id, b]));
@@ -68,18 +69,7 @@ export default function Benefits() {
                 {byId.schema.body}
               </p>
             </div>
-            <ul className="mt-7 flex flex-wrap gap-2">
-              {["Afvallen", "Sterker worden", "Fitter worden", "Herstel"].map(
-                (goal) => (
-                  <li
-                    key={goal}
-                    className="rounded-full border border-line-strong px-3 py-1.5 text-[13px] text-ink"
-                  >
-                    {goal}
-                  </li>
-                ),
-              )}
-            </ul>
+            <GoalChips />
           </article>
         </Reveal>
 
