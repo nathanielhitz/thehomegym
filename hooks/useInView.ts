@@ -28,7 +28,18 @@ export function useInView<T extends HTMLElement>(threshold = 0.12) {
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+
+    // Vangnet: vuurt de observer om wat voor reden ook niet (trage hydratatie,
+    // browser-eigenaardigheid), dan wordt het element na 1,5 s alsnog getoond.
+    const fallback = window.setTimeout(() => {
+      setInView(true);
+      observer.disconnect();
+    }, 1500);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, [threshold]);
 
   return { ref, inView };

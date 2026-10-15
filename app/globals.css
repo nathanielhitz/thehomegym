@@ -93,15 +93,20 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
-/* Scroll-reveal. Valt terug op zichtbaar wanneer JS uitstaat. */
+/* Scroll-reveal. De verborgen beginstand geldt alleen als <html> de class
+   "js" heeft (gezet door een inline script in de head). Zonder JS, of als het
+   script niet draait, is alles dus gewoon zichtbaar. De hook zet daarbovenop
+   na 1,5 s alles op in-view als de observer niet gevuurd heeft. */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
   transition:
     opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.in-view {
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+}
+html.js .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
@@ -191,7 +196,7 @@ p {
     height: 100%;
     opacity: 0.55;
   }
-  .reveal {
+  html.js .reveal {
     opacity: 1;
     transform: none;
     transition: none;

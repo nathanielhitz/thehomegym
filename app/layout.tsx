@@ -102,12 +102,20 @@ export default function RootLayout({
     <html
       lang="nl"
       className={`${archivo.variable} ${instrumentSans.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Zet zo vroeg mogelijk de class "js" op <html>. Alleen dan start de
+            scroll-reveal verborgen (zie globals.css). Zonder JS, of bij
+            prefers-reduced-motion, blijft alles direct zichtbaar. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js')}",
+          }}
+        />
+      </head>
       <body>
-        <noscript>
-          {/* Zonder JavaScript geen scroll-reveal, maar wel alle content. */}
-          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
-        </noscript>
 
         <a
           href="#hoofdinhoud"
