@@ -131,7 +131,7 @@ export default function Footer() {
           <p>
             &copy; {new Date().getFullYear()} {company.name}, {company.city}
           </p>
-          <p>Fitness vanaf 18 jaar</p>
+          <p>Fitness en groepslessen vanaf 18 jaar</p>
         </div>
       </div>
     </footer>

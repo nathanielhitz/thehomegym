@@ -113,8 +113,9 @@ export default function Schedule() {
             </dl>
 
             <p className="mt-6 border-t border-line-strong pt-5 text-[14px] leading-relaxed text-muted">
-              Fitness is toegankelijk vanaf 18 jaar. Gasten meenemen kan in
-              overleg of met een dagpas.
+              Fitness en groepslessen zijn toegankelijk vanaf 18 jaar,
+              personal training vanaf 16 jaar met toestemming van een ouder.
+              Gasten meenemen kan in overleg of met een dagpas.
             </p>
 
             <div className="mt-auto border-t border-line-strong pt-6">

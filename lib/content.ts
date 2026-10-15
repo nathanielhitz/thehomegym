@@ -171,8 +171,8 @@ export const benefits: Benefit[] = [
   },
   {
     id: "leeftijd",
-    title: "Alleen 18 jaar en ouder",
-    body: "Voor fitness geldt een leeftijdsgrens van 18 jaar. Dat houdt de sfeer rustig en volwassen, precies waar de meeste leden voor komen.",
+    title: "Fitness en groepslessen vanaf 18 jaar",
+    body: "Dat houdt de sfeer rustig en volwassen, precies waar de meeste leden voor komen. Personal training kan al vanaf 16 jaar, met toestemming van een ouder.",
     icon: "leeftijd",
   },
   {
@@ -519,7 +519,7 @@ export const faqs = [
   },
   {
     q: "Vanaf welke leeftijd kan ik lid worden?",
-    a: "Fitness is toegankelijk vanaf 18 jaar. Voor personal training kan daar een uitzondering op gemaakt worden, mits een ouder of verzorger toestemming geeft.",
+    a: "Fitness en groepslessen zijn toegankelijk vanaf 18 jaar. Personal training kan vanaf 16 jaar, als een ouder of verzorger toestemming geeft.",
   },
   {
     q: "Hoe betaal ik?",
