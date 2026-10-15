@@ -94,31 +94,30 @@ export const images = {
 };
 
 /* ── Keurmerken en aansluitingen (logo's van de huidige site) ────────────── */
+/* Logo's van aansluitingen en certificeringen. Lokaal als wit-op-transparant
+   PNG (128px hoog, strak uitgesneden), zodat ze op de donkere band allemaal
+   dezelfde hoogte en kleur krijgen. ISSA en Boxercise hadden op Wix een
+   ingebakken zwarte achtergrond; die is weggesneden (public/logos). */
 export const certifications = [
-  {
-    name: "NL Actief",
-    src: wixImage("49ba32_5326a090fea64156869c9bdba6600beb~mv2.png", 420, 210),
-    width: 140,
-  },
-  {
-    name: "ISSA Certified",
-    src: wixImage("49ba32_c51fa32a11b14d258290b2421754d3f3~mv2.jpeg", 480, 270),
-    width: 132,
-  },
+  { name: "NL Actief", src: "/logos/nl-actief.png", width: 260, height: 128 },
+  { name: "ISSA Certified", src: "/logos/issa.png", width: 242, height: 128 },
   {
     name: "Mobility Trainer",
-    src: wixImage("49ba32_f57495b88cee425aacaf3d55954034c7~mv2.png", 470, 174),
-    width: 140,
+    src: "/logos/mobility-trainer.png",
+    width: 562,
+    height: 128,
   },
   {
     name: "Boxercise Nederland",
-    src: wixImage("49ba32_c544bdcba18b4fa68f9ddea53e41b2a3~mv2.png", 454, 190),
-    width: 128,
+    src: "/logos/boxercise.png",
+    width: 299,
+    height: 128,
   },
   {
     name: "Bedrijfsfitness Nederland",
-    src: wixImage("49ba32_9e7b6a2ca6fa4f28a366a5b0b0685dbc~mv2.png", 360, 118),
-    width: 132,
+    src: "/logos/bedrijfsfitness-nederland.png",
+    width: 397,
+    height: 128,
   },
 ];
 

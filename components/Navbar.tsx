@@ -56,7 +56,7 @@ export default function Navbar({ overHero = false }: { overHero?: boolean }) {
         className={`fixed inset-x-0 top-0 z-50 transition-[background-color,border-color] duration-300 ${
           light
             ? "border-b border-transparent bg-transparent"
-            : "border-b border-line bg-paper/96"
+            : "border-b border-line bg-paper/90 backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex h-[68px] w-full max-w-[1240px] items-center justify-between px-5 sm:px-8 md:h-[76px]">

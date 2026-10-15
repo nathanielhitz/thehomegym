@@ -148,7 +148,7 @@ html.js .reveal.in-view {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 32s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 @keyframes marquee {
   to {
