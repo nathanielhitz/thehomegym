@@ -1,9 +1,9 @@
-import { CaretDown } from "@phosphor-icons/react/dist/ssr";
+import { CaretDown, Star } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import HeroVideo from "@/components/HeroVideo";
 import OpenNowBadge from "@/components/OpenNowBadge";
 import PromoBadge from "@/components/PromoBadge";
-import { ctaMessages, images, whatsappHref } from "@/lib/content";
+import { company, ctaMessages, images, whatsappHref } from "@/lib/content";
 
 export default function Hero() {
   return (
@@ -73,7 +73,27 @@ export default function Hero() {
           </Button>
         </div>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2.5">
+        {/* Sociaal bewijs direct onder de knoppen, boven de open-badge. */}
+        <a
+          href={company.googleReviewsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex items-center gap-2.5 text-[14px] text-paper/85 underline-offset-4 hover:text-paper hover:underline"
+        >
+          <span className="flex gap-0.5 text-signal" aria-hidden>
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} size={14} weight="fill" />
+            ))}
+          </span>
+          <span>
+            <strong className="font-semibold text-paper tnum">
+              {company.googleRating}
+            </strong>{" "}
+            op Google
+          </span>
+        </a>
+
+        <div className="mt-4 flex flex-wrap items-center gap-2.5">
           <PromoBadge />
           <OpenNowBadge className="bg-paper/95" />
         </div>

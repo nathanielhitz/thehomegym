@@ -66,6 +66,12 @@ html {
   scroll-padding-top: 88px;
 }
 
+/* Ankers (#aanbod, #rooster, #proefweek, ...) landen onder de vaste
+   navigatiebalk (68 tot 76 px hoog) in plaats van eronder verstopt. */
+[id] {
+  scroll-margin-top: 88px;
+}
+
 body {
   background-color: #f7f5f2;
   color: #141517;
