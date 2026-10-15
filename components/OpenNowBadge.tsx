@@ -1,49 +1,18 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { openingHours } from "@/lib/content";
-
-const toMinutes = (time: string) => {
-  const [h, m] = time.split(":").map(Number);
-  return h * 60 + m;
-};
-
-type Status = { open: boolean; label: string } | null;
-
-function currentStatus(now: Date): Status {
-  const iso = now.getDay() === 0 ? 7 : now.getDay();
-  const today = openingHours.find((d) => d.iso === iso);
-  if (!today) return null;
-
-  const minutes = now.getHours() * 60 + now.getMinutes();
-  const open = toMinutes(today.open);
-  const close = toMinutes(today.close);
-
-  if (minutes >= open && minutes < close) {
-    return { open: true, label: `Nu open tot ${today.close}` };
-  }
-
-  if (minutes < open) {
-    return { open: false, label: `Vandaag open vanaf ${today.open}` };
-  }
-
-  const next = openingHours.find((d) => d.iso === (iso === 7 ? 1 : iso + 1));
-  return {
-    open: false,
-    label: next ? `Morgen open vanaf ${next.open}` : "Nu gesloten",
-  };
-}
+import { currentOpeningStatus, type OpeningStatus } from "@/lib/openingStatus";
 
 export default function OpenNowBadge({ className = "" }: { className?: string }) {
   // Pas na mount berekenen, anders wijkt de server-render af van de client.
-  const [status, setStatus] = useState<Status>(null);
+  const [status, setStatus] = useState<OpeningStatus>(null);
 
   useEffect(() => {
     const frame = requestAnimationFrame(() =>
-      setStatus(currentStatus(new Date())),
+      setStatus(currentOpeningStatus(new Date())),
     );
     const id = window.setInterval(
-      () => setStatus(currentStatus(new Date())),
+      () => setStatus(currentOpeningStatus(new Date())),
       60_000,
     );
     return () => {

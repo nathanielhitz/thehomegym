@@ -1,8 +1,7 @@
-import { CaretDown, Star } from "@phosphor-icons/react/dist/ssr";
+import { Star } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import HeroVideo from "@/components/HeroVideo";
-import OpenNowBadge from "@/components/OpenNowBadge";
-import PromoBadge from "@/components/PromoBadge";
+import HeroInfoLine from "@/components/HeroInfoLine";
 import { company, ctaMessages, images, whatsappHref } from "@/lib/content";
 
 export default function Hero() {
@@ -40,8 +39,9 @@ export default function Hero() {
         className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-ink/45 to-transparent"
       />
 
-      {/* De onderrand houdt de actiebalk vrij: balkhoogte plus rustruimte. */}
-      <div className="relative w-full px-5 pt-32 pb-[calc(var(--cta-bar)+2.5rem)] sm:px-8 sm:pb-[calc(var(--cta-bar)+3.5rem)] lg:py-32 lg:pr-14 lg:pl-[max(2rem,calc((100vw-1240px)/2))]">
+      {/* De actiebalk staat pas na de hero, dus de onderrand hoeft er geen
+          ruimte voor vrij te houden. */}
+      <div className="relative w-full px-5 pt-32 pb-10 sm:px-8 sm:pb-14 lg:py-32 lg:pr-14 lg:pl-[max(2rem,calc((100vw-1240px)/2))]">
         <h1 className="max-w-[15ch] font-display text-[38px] leading-[1.03] font-extrabold text-paper sm:text-[52px] lg:text-[60px] xl:text-[66px]">
           De persoonlijke sportschool van Heinenoord.
         </h1>
@@ -73,7 +73,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        {/* Sociaal bewijs direct onder de knoppen, boven de open-badge. */}
+        {/* Sociaal bewijs direct onder de knoppen, daaronder één info-regel. */}
         <a
           href={company.googleReviewsUrl}
           target="_blank"
@@ -93,19 +93,7 @@ export default function Hero() {
           </span>
         </a>
 
-        <div className="mt-4 flex flex-wrap items-center gap-2.5">
-          <PromoBadge />
-          <OpenNowBadge className="bg-paper/95" />
-        </div>
-      </div>
-
-      {/* Scroll-hint, rechts uitgelijnd op dezelfde onderlijn als de badge. */}
-      <div
-        aria-hidden
-        className="absolute right-5 bottom-[calc(var(--cta-bar)+2.5rem)] flex flex-col items-center gap-2 sm:right-8 sm:bottom-[calc(var(--cta-bar)+3.5rem)] lg:right-14 lg:bottom-14"
-      >
-        <span className="scroll-hint h-8 w-px sm:h-11" />
-        <CaretDown size={13} weight="bold" className="text-paper/80" />
+        <HeroInfoLine className="mt-3" />
       </div>
     </section>
   );
