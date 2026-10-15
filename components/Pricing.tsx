@@ -78,7 +78,7 @@ export default function Pricing() {
                     variant={plan.highlight ? "primary" : "secondary"}
                     className="w-full"
                     event="tarief_click"
-                    eventParams={{ pakket: plan.id, location: "tarieven" }}
+                    eventParams={{ pakket: `${plan.name} ${plan.duration}`, location: "tarieven" }}
                   >
                     Word lid
                   </Button>

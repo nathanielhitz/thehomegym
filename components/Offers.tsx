@@ -82,7 +82,7 @@ export default function Offers() {
                     href="#tarieven"
                     variant="secondary"
                     event="tarief_click"
-                    eventParams={{ pakket: "fitness", location: "aanbod" }}
+                    eventParams={{ pakket: "Onbeperkt fitness", location: "aanbod" }}
                   >
                     Bekijk tarieven
                   </Button>
