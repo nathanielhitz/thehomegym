@@ -1,6 +1,7 @@
 import { Star } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { company, reviews } from "@/lib/content";
 
 export default function Reviews() {
@@ -33,33 +34,9 @@ export default function Reviews() {
         </Button>
       </Reveal>
 
-      <div className="mt-8 gap-4 sm:columns-2 lg:columns-3">
-        {reviews.map((review, i) => (
-          <Reveal
-            key={review.name}
-            delay={(i % 3) as 0 | 1 | 2}
-            className="mb-4 break-inside-avoid"
-          >
-            <figure className="rounded-2xl border border-line bg-paper-deep p-6 sm:p-7">
-              <blockquote className="text-[15px] leading-relaxed text-ink">
-                {review.text}
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 border-t border-line pt-4 text-[14px]">
-                <span
-                  aria-hidden
-                  className="flex h-8 w-8 items-center justify-center rounded-lg bg-brick/12 font-display text-[14px] font-bold text-brick"
-                >
-                  {review.name.charAt(0)}
-                </span>
-                <span className="text-muted">
-                  <span className="font-medium text-ink">{review.name}</span>,
-                  via Google
-                </span>
-              </figcaption>
-            </figure>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal delay={1}>
+        <ReviewsCarousel reviews={reviews} />
+      </Reveal>
     </section>
   );
 }
