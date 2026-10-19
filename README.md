@@ -107,14 +107,31 @@ gedownload. Bij oplevering moeten deze vervangen worden door originelen van
 de klant, of ten minste door een eigen CDN, zodat de site niet afhankelijk is
 van Wix.
 
-De hero heeft een achtergrondvideo (`public/hero-video.mp4`, 3,3 MB, 1280px
-breed, 38 s, geen geluid, autoplay). De foto `Hero.jpeg` dient als poster en
-als stilstaand beeld voor bezoekers met `prefers-reduced-motion`. De video
-staat bewust donker (brightness 0.7, licht ontkleurd) en speelt op 0.75x af
-(`HeroVideo.tsx`), zodat de beweging niet met tekst en knoppen concurreert. Het
-onbewerkte origineel (14 MB, 1080p met audio) staat in `bronbestanden/` en
-wordt niet gedeployd. Opnieuw comprimeren gaat met:
-`ffmpeg -i bronbestanden/hero-video-origineel.mp4 -vf scale=1280:-2 -an -c:v libx264 -crf 30 -preset slow -pix_fmt yuv420p -movflags +faststart public/hero-video.mp4`
+De hero heeft twee achtergrondvideo's, allebei zonder geluid, autoplay,
+geknipt uit het origineel in `bronbestanden/`:
+
+- `public/hero-video.mp4` (1,0 MB, 1280×720, 12 s) voor schermen vanaf
+  768px: box jumps, sledge op de groene turf en de lachende sporter (22,9 s
+  tot 35,0 s uit het origineel).
+- `public/hero-video-staand.mp4` (0,7 MB, 540×960, 10,6 s) voor telefoons.
+  Een 16:9-beeld staand bijgesneden laat vooral het dak van de hal zien, dus
+  dit is een aparte 9:16-montage van vijf shots die staand wél werken: leg
+  press, kabelstation, bankdrukken, box jump met de groene schoenen, lach.
+
+`HeroVideo.tsx` kiest in de browser op schermbreedte welk bestand geladen
+wordt. Bij `prefers-reduced-motion` of databesparing zet hij geen bron en
+blijft de foto `Hero.jpeg` staan (die is ook de poster). De video staat
+bewust donker (brightness 0.7, licht ontkleurd) en speelt op 0.75x af, zodat
+de beweging niet met tekst en knoppen concurreert. Het onbewerkte origineel
+(14 MB, 1080p met audio) en de eerdere 38 s-versie staan in `bronbestanden/`
+en worden niet gedeployd. Opnieuw knippen:
+
+```
+# liggend
+ffmpeg -ss 22.92 -to 35.0 -i bronbestanden/hero-video-origineel.mp4 -vf scale=1280:-2 -an -c:v libx264 -crf 31 -preset slow -pix_fmt yuv420p -movflags +faststart public/hero-video.mp4
+# staand (vijf shots, 9:16 uit het midden gesneden)
+ffmpeg -i bronbestanden/hero-video-origineel.mp4 -an -filter_complex "[0:v]trim=12.64:14.64,setpts=PTS-STARTPTS[a];[0:v]trim=15.80:18.00,setpts=PTS-STARTPTS[b];[0:v]trim=20.90:22.92,setpts=PTS-STARTPTS[c];[0:v]trim=24.24:26.16,setpts=PTS-STARTPTS[d];[0:v]trim=32.48:35.00,setpts=PTS-STARTPTS[e];[a][b][c][d][e]concat=n=5:v=1:a=0,crop=608:1080:656:0,scale=540:-2[v]" -map "[v]" -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart public/hero-video-staand.mp4
+```
 
 De poster/fallback is de foto van de trainer bij het squatrek. Die is
 gekozen omdat het de enige eigen liggende foto is met een donkere wand links,

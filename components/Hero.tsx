@@ -12,9 +12,12 @@ export default function Hero() {
     >
       {/* Video bewust donker en iets ontkleurd: beweging trekt al genoeg
           aandacht, de koppen en knoppen moeten winnen. De foto blijft poster
-          en stilstaand beeld voor bezoekers met prefers-reduced-motion. */}
+          en stilstaand beeld voor bezoekers met prefers-reduced-motion
+          (zie HeroVideo.tsx en globals.css). Telefoons krijgen een apart
+          staand geknipte loop. */}
       <HeroVideo
         src="/hero-video.mp4"
+        srcMobile="/hero-video-staand.mp4"
         poster={images.hero.src}
         className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[0.7] saturate-[0.85] lg:object-[45%_center] lg:brightness-[0.8] lg:saturate-[0.9]"
       />

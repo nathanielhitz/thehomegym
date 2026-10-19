@@ -200,7 +200,8 @@ html.js .reveal.in-view {
 }
 
 /* Achtergrondvideo in de hero. Bij prefers-reduced-motion verbergen we de
-   video en tonen we de stilstaande foto op dezelfde plek. */
+   video en tonen we de stilstaande foto op dezelfde plek. HeroVideo.tsx zet
+   dan ook geen bron, zodat er niets gedownload wordt. */
 .hero-video-still {
   display: none;
 }
