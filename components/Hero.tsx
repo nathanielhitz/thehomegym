@@ -47,8 +47,8 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 max-w-[46ch] text-[17px] leading-relaxed text-paper/92 sm:text-lg">
-          Trainen zonder de drukte van een massagym, met een schema dat op jou
-          is gemaakt.
+          Kleinschalig trainen met persoonlijke begeleiding en de rust om te
+          focussen. Met een schema dat op jou is gemaakt.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
