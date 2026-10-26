@@ -47,6 +47,13 @@ configuratie en één functie; de UI is af.
       offers, trainers, WebSite; FAQ alleen op home), contrast `--color-muted`
       naar #5f5c58, privacypagina `/privacy`, `apple-icon` en `manifest`,
       hero-poster als WebP, logo's lazy en op halve maat.
+- [x] Fase 3 gedaan: pagina's `/personal-training` en `/groepslessen` met eigen
+      og-image, Service/Breadcrumb/FAQ-schema en links vanuit aanbod, rooster
+      en footer; `public/llms.txt`; bereikbaarheidszin met omliggende dorpen;
+      prijsdatum onder de tarieven (`pricesCheckedLabel` in `lib/content.ts`,
+      bijwerken bij elke prijswijziging).
+- [ ] Event-schema voor de groepslessen pas toevoegen als de boks-dag
+      bevestigd is.
 - [ ] Geo-coördinaten in `lib/schema.ts` zijn van OpenStreetMap (Reedijk 7);
       vervangen door de exacte positie uit Google Business Profile.
 - [ ] Fresha en Trustoo laten corrigeren naar Reedijk 7-J4, 3274 KE Heinenoord

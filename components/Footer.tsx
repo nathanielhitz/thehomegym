@@ -11,6 +11,7 @@ import {
   mailtoHref,
   navLinks,
   openingHours,
+  servicePages,
   whatsappHref,
 } from "@/lib/content";
 
@@ -52,6 +53,16 @@ export default function Footer() {
               Op deze site
             </h2>
             <ul className="mt-4 space-y-2.5">
+              {servicePages.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[15px] font-medium text-ink underline-offset-4 transition-colors duration-200 hover:text-brick hover:underline"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a

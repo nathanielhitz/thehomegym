@@ -133,12 +133,61 @@ export const websiteSchema = {
   publisher: { "@id": organisationId },
 };
 
-export const faqSchema = {
+export const faqPageSchema = (items: { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqs.map((item) => ({
+  mainEntity: items.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: { "@type": "Answer", text: item.a },
   })),
-};
+});
+
+export const faqSchema = faqPageSchema(faqs);
+
+/* Dienstpagina: de dienst zelf plus een kruimelpad naar de homepage. */
+export const serviceSchema = ({
+  path,
+  name,
+  description,
+  serviceType,
+  offers,
+}: {
+  path: string;
+  name: string;
+  description: string;
+  serviceType: string;
+  offers: { name: string; price: string; unitText: string; description?: string }[];
+}) => [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${base}${path}#dienst`,
+    name,
+    description,
+    serviceType,
+    url: `${base}${path}`,
+    provider: { "@id": organisationId },
+    areaServed: { "@type": "AdministrativeArea", name: company.region },
+    offers: offers.map((offer) => ({
+      "@type": "Offer",
+      name: offer.name,
+      description: offer.description,
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: offer.price,
+        priceCurrency: "EUR",
+        unitText: offer.unitText,
+      },
+      url: `${base}${path}`,
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Thehomegym", item: base },
+      { "@type": "ListItem", position: 2, name, item: `${base}${path}` },
+    ],
+  },
+];

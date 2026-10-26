@@ -1,14 +1,12 @@
 import type { NextConfig } from "next";
 
 // 301's vanaf de oude Wix-URL's (pages-sitemap.xml van de oude site plus de
-// paden uit README). Als er later aparte pagina's komen voor personal
-// training en groepslessen, de bestemming hier aanpassen.
+// paden uit README). /personal-training en /groepslessen zijn nu echte
+// pagina's en staan hier dus niet meer in.
 const oldWixRedirects: { source: string; destination: string }[] = [
-  { source: "/personal-training", destination: "/#aanbod" },
-  { source: "/1-op-1", destination: "/#aanbod" },
-  { source: "/duo", destination: "/#aanbod" },
+  { source: "/1-op-1", destination: "/personal-training" },
+  { source: "/duo", destination: "/personal-training" },
   { source: "/fitness", destination: "/#aanbod" },
-  { source: "/groepslessen", destination: "/#rooster" },
   { source: "/tarieven", destination: "/#tarieven" },
   { source: "/6m", destination: "/#tarieven" },
   { source: "/kopie-van-6m", destination: "/#tarieven" },

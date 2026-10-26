@@ -4,7 +4,8 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import ClassCta from "@/components/ClassCta";
 import OpenNowBadge from "@/components/OpenNowBadge";
-import { company, groupClasses, openingHours } from "@/lib/content";
+import Link from "next/link";
+import { company, groupClasses, nearbyPlaces, openingHours } from "@/lib/content";
 
 export default function Schedule() {
   return (
@@ -76,7 +77,14 @@ export default function Schedule() {
 
             <p className="border-t border-line px-6 py-4 text-[14px] leading-relaxed text-muted sm:px-8">
               Je eerste groepsles is gratis en je zit nergens aan vast. Daarna
-              kies je een strippenkaart of een lidmaatschap met lessen.
+              kies je een strippenkaart of een lidmaatschap met lessen.{" "}
+              <Link
+                href="/groepslessen"
+                className="font-medium text-ink underline-offset-4 hover:text-brick hover:underline"
+              >
+                Lees meer over de lessen
+              </Link>
+              .
             </p>
           </div>
         </Reveal>
@@ -120,6 +128,12 @@ export default function Schedule() {
                   {company.postalCode} {company.city}
                 </span>
               </address>
+              <p className="mt-2 text-[14px] leading-relaxed text-muted">
+                Op bedrijventerrein Reedijk, vlak bij de A29. Vanuit{" "}
+                {nearbyPlaces.slice(0, -1).join(", ")} en{" "}
+                {nearbyPlaces[nearbyPlaces.length - 1]} ben je er binnen een
+                kwartier.
+              </p>
               <Button
                 href={company.mapsUrl}
                 variant="quiet"

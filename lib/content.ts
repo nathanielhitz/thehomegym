@@ -542,6 +542,67 @@ export const faqs = [
   },
 ];
 
+/* ── FAQ per dienstpagina (zichtbaar op de pagina én in het FAQPage-schema) */
+export const personalTrainingFaqs = [
+  {
+    q: "Wat gebeurt er bij de gratis intake?",
+    a: "Je maakt kennis met je trainer, we bespreken je doel en je maakt een Full Body Scan. Op basis daarvan krijg je een voorstel voor je trainingen. Je zit nergens aan vast.",
+  },
+  {
+    q: "Kan ik personal training ook met z'n tweeën doen?",
+    a: "Ja. Duo training doe je samen met een vriend, partner of collega, in dezelfde privézaal en met dezelfde trainer. Dat kost vanaf 35 euro per training per persoon.",
+  },
+  {
+    q: "Hoe betaal ik personal training?",
+    a: "Je kunt in één, twee of drie termijnen betalen. Dat spreken we af bij de intake.",
+  },
+  {
+    q: "Vanaf welke leeftijd kan ik personal training doen?",
+    a: "Vanaf 16 jaar, als een ouder of verzorger toestemming geeft. Fitness en groepslessen zijn vanaf 18 jaar.",
+  },
+  {
+    q: "Ik herstel van een blessure. Kan ik dan trainen?",
+    a: "In veel gevallen wel. De trainer stemt de oefeningen af op wat je lichaam nu aankan en bouwt dat rustig op. Overleg bij twijfel eerst met je arts of fysiotherapeut.",
+  },
+];
+
+export const groepslesFaqs = [
+  {
+    q: "Moet ik lid zijn om mee te doen met een groepsles?",
+    a: "Nee. Je kunt losse lessen doen met een strippenkaart van 10 of 20 lessen, of een losse les voor 10 euro. Leden met het lidmaatschap Fitness en groepslessen trainen onbeperkt mee.",
+  },
+  {
+    q: "Is de eerste les echt gratis?",
+    a: "Ja. Je eerste groepsles is gratis en je zit nergens aan vast. Daarna kies je een strippenkaart of een lidmaatschap met lessen.",
+  },
+  {
+    q: "Hoeveel mensen doen er mee?",
+    a: "Maximaal tien bij buik, billen en benen en circuittraining, maximaal acht bij boksen. Zo kan de instructeur iedereen zien.",
+  },
+  {
+    q: "Ik ben beginner. Welke les past bij mij?",
+    a: "Alle lessen zijn geschikt voor beginners. De oefeningen worden aangepast op jouw niveau. Circuittraining is een goede eerste kennismaking omdat je veel verschillende oefeningen doet.",
+  },
+  {
+    q: "Wat moet ik meenemen?",
+    a: "Schone sportschoenen, sportkleding en een handdoek. Voor de boksles zijn er bokshandschoenen en pads in de zaal.",
+  },
+];
+
+/* ── Plaatsen in de buurt (voor de bereikbaarheidszin) ──────────────────── */
+export const nearbyPlaces = [
+  "Mijnsheerenland",
+  "Puttershoek",
+  "Oud-Beijerland",
+  "Westmaas",
+  "Klaaswaal",
+  "'s-Gravendeel",
+];
+
+// Datum waarop de tarieven op de site zijn gecontroleerd; bij elke
+// prijswijziging bijwerken.
+export const pricesCheckedLabel = "oktober 2026";
+
 /* ── Huisregels, kort samengevat ────────────────────────────────────────── */
 export const houseRules = [
   "Handdoekgebruik is verplicht",
@@ -560,6 +621,11 @@ export const equipmentBrands = [
 ];
 
 // Absolute ankers, zodat het menu ook werkt vanaf /algemene-voorwaarden.
+export const servicePages = [
+  { href: "/personal-training", label: "Personal training" },
+  { href: "/groepslessen", label: "Groepslessen" },
+];
+
 export const navLinks = [
   { href: "/#aanbod", label: "Aanbod" },
   { href: "/#rooster", label: "Rooster" },

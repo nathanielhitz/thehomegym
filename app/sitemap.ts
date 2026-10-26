@@ -7,6 +7,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${base}/`, lastModified, changeFrequency: "weekly", priority: 1 },
     {
+      url: `${base}/personal-training`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${base}/groepslessen`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${base}/privacy`,
       lastModified,
       changeFrequency: "yearly",

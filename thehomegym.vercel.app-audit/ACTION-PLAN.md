@@ -1,6 +1,6 @@
 # Actieplan Thehomegym
 
-Status 26 okt 2026: fase 1 en fase 2 zijn in code uitgevoerd (zie TODO-LIVE.md), behalve de punten die bij de klant liggen (6, 7, 8) en de exacte GBP-coördinaten voor het schema. KvK stond al in footer en voorwaarden.
+Status 26 okt 2026: fase 1, 2 en 3 zijn in code uitgevoerd (fase 3 zonder /bedrijfsfitness en zonder Event-schema, die wachten op de klant) (zie TODO-LIVE.md), behalve de punten die bij de klant liggen (6, 7, 8) en de exacte GBP-coördinaten voor het schema. KvK stond al in footer en voorwaarden.
 
 Prioriteit: Kritiek > Hoog > Medium > Laag. Inspanning is een schatting voor Nathaniel; "klant" betekent dat de eigenaren iets moeten aanleveren of doen.
 

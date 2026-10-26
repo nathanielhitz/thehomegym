@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Check } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
@@ -118,16 +119,24 @@ export default function Offers() {
                       from={personalTraining.priceFrom}
                       note={personalTraining.priceNote}
                     />
-                    <Button
-                      href={whatsappHref(ctaMessages.personalTraining)}
-                      variant="quiet"
-                      external
-                      className="mt-3 text-[15px]"
-                      event="whatsapp_click"
-                      eventParams={{ location: "aanbod", onderwerp: "personal-training" }}
-                    >
-                      Gratis intake aanvragen
-                    </Button>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+                      <Button
+                        href={whatsappHref(ctaMessages.personalTraining)}
+                        variant="quiet"
+                        external
+                        className="text-[15px]"
+                        event="whatsapp_click"
+                        eventParams={{ location: "aanbod", onderwerp: "personal-training" }}
+                      >
+                        Gratis intake aanvragen
+                      </Button>
+                      <Link
+                        href="/personal-training"
+                        className="text-[14px] font-medium text-muted underline-offset-4 transition-colors duration-200 hover:text-brick hover:underline"
+                      >
+                        Meer over personal training
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -156,13 +165,21 @@ export default function Offers() {
                       from={groepslessen.priceFrom}
                       note={groepslessen.priceNote}
                     />
-                    <Button
-                      href="#rooster"
-                      variant="quiet"
-                      className="mt-3 text-[15px]"
-                    >
-                      Bekijk het rooster
-                    </Button>
+                    <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
+                      <Button
+                        href="#rooster"
+                        variant="quiet"
+                        className="text-[15px]"
+                      >
+                        Bekijk het rooster
+                      </Button>
+                      <Link
+                        href="/groepslessen"
+                        className="text-[14px] font-medium text-muted underline-offset-4 transition-colors duration-200 hover:text-brick hover:underline"
+                      >
+                        Alles over de lessen
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </article>

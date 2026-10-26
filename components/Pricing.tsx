@@ -5,6 +5,7 @@ import PromoBadge from "@/components/PromoBadge";
 import {
   memberships,
   membershipIncludes,
+  pricesCheckedLabel,
   registrationFee,
   stripCards,
   trainingRates,
@@ -219,6 +220,11 @@ export default function Pricing() {
             </div>
           </Reveal>
         </div>
+
+        <p className="mt-5 text-[13px] text-muted">
+          Alle prijzen zijn inclusief btw en gecontroleerd in{" "}
+          {pricesCheckedLabel}. Wijzigt er iets, dan staat het hier als eerste.
+        </p>
       </div>
     </section>
   );
