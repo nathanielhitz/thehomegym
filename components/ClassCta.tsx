@@ -30,6 +30,12 @@ export default function ClassCta({
       >
         <WhatsappLogo size={16} weight="fill" className="text-brick" aria-hidden />
         Gratis proefles aanvragen
+        {/* Elke les heeft een eigen link; voor screenreaders (en de
+            "identieke links"-check) moet de naam dat ook zeggen. */}
+        <span className="sr-only">
+          {" "}
+          {name} op {day.toLowerCase()}
+        </span>
       </a>
       <a
         href="#proefweek"
