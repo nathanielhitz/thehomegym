@@ -45,6 +45,10 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // experimental.inlineCss bewust uit: getest op 26 okt 2026. De CSS komt dan
+  // in de HTML én in de RSC-payload, de homepage ging van 40 naar 69 KB gzip
+  // en FCP/LCP werden trager. Het ene CSS-bestand (9 KB, immutable gecached)
+  // is sneller, ook al noemen SEO-checkers het "render-blocking".
   images: {
     qualities: [75, 85, 100],
   },

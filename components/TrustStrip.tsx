@@ -18,7 +18,7 @@ function Logos() {
             alt={cert.name}
             width={cert.width}
             height={cert.height}
-            sizes="(min-width: 768px) 160px, 140px"
+            unoptimized
             className="h-7 w-auto brightness-0 invert opacity-70 transition-opacity duration-200 hover:opacity-100 md:h-8"
           />
         </li>

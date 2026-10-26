@@ -99,29 +99,32 @@ export const images = {
 /* ── Keurmerken en aansluitingen (logo's van de huidige site) ────────────── */
 /* Logo's van aansluitingen en certificeringen. Lokaal als wit-op-transparant
    PNG (128px hoog, strak uitgesneden), zodat ze op de donkere band allemaal
-   dezelfde hoogte en kleur krijgen. De afmetingen hieronder zijn de helft van
-   het bestand: de logo's staan 28-32px hoog, dus 64px is genoeg voor 2x. ISSA en Boxercise hadden op Wix een
+   dezelfde hoogte en kleur krijgen. Ze staan ook als WebP (kwaliteit 90, zelfde
+   pixelmaat) en worden ongewijzigd geleverd (`unoptimized` in TrustStrip):
+   zo klopt de verhouding exact. Bij verkleinen door next/image rondde de
+   hoogte af en zagen SEO-checkers dat als vervormd. De PNG's blijven staan
+   als bron. ISSA en Boxercise hadden op Wix een
    ingebakken zwarte achtergrond; die is weggesneden (public/logos). */
 export const certifications = [
-  { name: "NL Actief", src: "/logos/nl-actief.png", width: 130, height: 64 },
-  { name: "ISSA Certified", src: "/logos/issa.png", width: 121, height: 64 },
+  { name: "NL Actief", src: "/logos/nl-actief.webp", width: 260, height: 128 },
+  { name: "ISSA Certified", src: "/logos/issa.webp", width: 242, height: 128 },
   {
     name: "Mobility Trainer",
-    src: "/logos/mobility-trainer.png",
-    width: 281,
-    height: 64,
+    src: "/logos/mobility-trainer.webp",
+    width: 562,
+    height: 128,
   },
   {
     name: "Boxercise Nederland",
-    src: "/logos/boxercise.png",
-    width: 150,
-    height: 64,
+    src: "/logos/boxercise.webp",
+    width: 299,
+    height: 128,
   },
   {
     name: "Bedrijfsfitness Nederland",
-    src: "/logos/bedrijfsfitness-nederland.png",
-    width: 199,
-    height: 64,
+    src: "/logos/bedrijfsfitness-nederland.webp",
+    width: 397,
+    height: 128,
   },
 ];
 
