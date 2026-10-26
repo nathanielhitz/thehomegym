@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "url": "https://thehomegym.vercel.app",
+    "domain": "thehomegym.vercel.app",
+    "production_domain": "www.thehomegym.nl",
+    "date": "2026-10-26",
+    "pages_crawled": 2,
+    "tools": [
+      "curl",
+      "Lighthouse 12 (npx, local Chromium)",
+      "Playwright 1.62 (iPhone 13 + 1440x900)",
+      "WebSearch"
+    ]
+  },
+  "summary": {
+    "health_score": 73,
+    "business_type": "Local Service · brick-and-mortar HealthClub (sportschool) · Heinenoord, Hoeksche Waard",
+    "lighthouse": {
+      "mobile": {
+        "performance": 89,
+        "accessibility": 97,
+        "best_practices": 100,
+        "seo": 100
+      },
+      "desktop": {
+        "performance": 100,
+        "accessibility": 97,
+        "best_practices": 100,
+        "seo": 100
+      }
+    },
+    "cwv_lab": {
+      "mobile": {
+        "lcp_s": 3.5,
+        "cls": 0.003,
+        "tbt_ms": 20,
+        "fcp_s": 1.4
+      },
+      "desktop": {
+        "lcp_s": 0.7,
+        "cls": 0.002,
+        "tbt_ms": 0,
+        "fcp_s": 0.3
+      }
+    },
+    "top_findings": [
+      "NAP-inconsistentie buiten de site: Fresha (Reedijk 8-11, 10:00-18:00) en Trustoo (Reedijk 8, Mijnsheerenland) wijken af van Reedijk 7-J4 Heinenoord",
+      "robots.txt en sitemap.xml ontbreken (404 met HTML-body)",
+      "15 foto's worden geladen van static.wixstatic.com en verdwijnen bij opzeggen van Wix",
+      "Redirectplan dekt de 11 URL's uit de oude Wix-sitemap niet volledig",
+      "Geen og:image terwijl WhatsApp en Instagram de belangrijkste deelkanalen zijn"
+    ],
+    "quick_wins": [
+      "app/robots.ts en app/sitemap.ts toevoegen",
+      "og:image (1200x630) en twitter:card summary_large_image",
+      "Beveiligingsheaders in next.config.ts",
+      "Contrast text-muted op tarieven-kaarten naar 4,5:1 (Accessibility 97 naar 100)",
+      "FAQPage-schema naar homepage; image/geo/hasMap/@id op HealthClub"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": 0.22,
+      "score": 62,
+      "what_works": [
+        "HTTP/2 + HSTS preload",
+        "TTFB 84-107 ms, statische prerender",
+        "Echte 404-statuscodes",
+        "Immutable caching op JS/CSS",
+        "Geen console-fouten of mislukte requests"
+      ],
+      "findings": [
+        {
+          "title": "robots.txt ontbreekt",
+          "severity": "High",
+          "description": "/robots.txt geeft 404 met de HTML-404-pagina. Geen Sitemap-verwijzing, geen AI-crawlerbeleid.",
+          "recommendation": "app/robots.ts met Allow /, Disallow /api/, Sitemap-regel."
+        },
+        {
+          "title": "sitemap.xml ontbreekt",
+          "severity": "High",
+          "description": "/sitemap.xml geeft 404.",
+          "recommendation": "app/sitemap.ts met / en /algemene-voorwaarden."
+        },
+        {
+          "title": "Redirectlijst onvolledig",
+          "severity": "High",
+          "description": "Oude Wix-sitemap bevat /personal-training, /groepslessen, /fitness, /tarieven, /over-ons, /proefweek, /proefweekqr, /duo, /1-op-1, /aanmelden; README noemt deels andere paden.",
+          "recommendation": "Volledige 301-tabel uit ACTION-PLAN.md in next.config.ts redirects()."
+        },
+        {
+          "title": "Beveiligingsheaders ontbreken",
+          "severity": "Medium",
+          "description": "Alleen strict-transport-security aanwezig. Geen nosniff, frame-ancestors, Referrer-Policy, Permissions-Policy, CSP.",
+          "recommendation": "headers() in next.config.ts."
+        },
+        {
+          "title": "Staging-URL indexeerbaar",
+          "severity": "Medium",
+          "description": "thehomegym.vercel.app heeft geen noindex; canonical naar www.thehomegym.nl vangt het grotendeels op.",
+          "recommendation": "X-Robots-Tag: noindex wanneer host op vercel.app eindigt."
+        },
+        {
+          "title": "public/-assets zonder lange cache",
+          "severity": "Low",
+          "description": "Hero.jpeg (231 KB) en beide hero-video's (1,03 MB / 649 KB) hebben max-age=0, must-revalidate.",
+          "recommendation": "Cache-Control immutable voor /Hero.jpeg, /hero-video*.mp4, /logos/*."
+        },
+        {
+          "title": "Dubbele id=\"contact\"",
+          "severity": "Low",
+          "description": "Sectie en formulierveld delen id=contact; ankerlink /#contact is ambigu.",
+          "recommendation": "Veld hernoemen naar id=bereikbaar."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "weight": 0.23,
+      "score": 78,
+      "what_works": [
+        "2.031 woorden met heldere positionering",
+        "Transparante prijzen en voorwaarden",
+        "Drie trainers met naam, foto, certificering",
+        "Oorsprongsverhaal (2016 zolder, 2022 zaak)",
+        "Zes reviews, acht FAQ's",
+        "B1-leesbaarheid, geen duplicatie"
+      ],
+      "findings": [
+        {
+          "title": "Eén pagina voor zes zoekintenties",
+          "severity": "High",
+          "description": "Personal training, groepslessen, boksen, bedrijfsfitness, tarieven en proefweek delen één URL en één H1.",
+          "recommendation": "/personal-training en /groepslessen toevoegen, later /bedrijfsfitness; vanuit secties linken."
+        },
+        {
+          "title": "Reviews zonder aantal, datum of bron-link",
+          "severity": "Medium",
+          "description": "'5,0 op Google' zonder aantal; reviewlink is een Google-zoekopdracht.",
+          "recommendation": "Aantal opvragen, tonen, AggregateRating toevoegen, place-id-link gebruiken."
+        },
+        {
+          "title": "Geen privacyverklaring op eigen domein",
+          "severity": "Medium",
+          "description": "Verwijzing bestaat, pagina niet; verplicht zodra GA4 aan staat.",
+          "recommendation": "/privacy-pagina plus cookiebanner bij GA4."
+        },
+        {
+          "title": "Geen KvK/eigenaar/rechtsvorm",
+          "severity": "Low",
+          "description": "Entiteitssignalen voor Trust ontbreken.",
+          "recommendation": "KvK, btw-nummer en rechtsvorm in footer en voorwaarden."
+        },
+        {
+          "title": "Dubbele H3's in Tarieven",
+          "severity": "Low",
+          "description": "'Onbeperkt fitness' en 'Fitness en groepslessen' komen elk twee keer voor als H3.",
+          "recommendation": "Looptijd in de H3 opnemen."
+        },
+        {
+          "title": "Boks-dag onzeker",
+          "severity": "Low",
+          "description": "Zaterdag of zondag niet bevestigd (README open punt 1).",
+          "recommendation": "Laten bevestigen voor livegang en Event-schema."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "weight": 0.2,
+      "score": 80,
+      "what_works": [
+        "Title 54 tekens: merk, categorie, plaats, regio",
+        "Description 158 tekens met prijs en CTA",
+        "Eén H1, logische H2-structuur",
+        "Alt-teksten op alle foto's",
+        "Skiplink, aria-labels, aria-expanded"
+      ],
+      "findings": [
+        {
+          "title": "Geen og:image",
+          "severity": "High",
+          "description": "Gedeelde links op WhatsApp/Facebook/Instagram tonen geen afbeelding; twitter:card is summary.",
+          "recommendation": "app/opengraph-image.tsx of public/og.jpg; twitter:card summary_large_image."
+        },
+        {
+          "title": "Interne linking alleen via ankers",
+          "severity": "Medium",
+          "description": "Eén echte interne link (voorwaarden); Google ziet één document.",
+          "recommendation": "Dienstpagina's toevoegen en vanuit secties linken."
+        },
+        {
+          "title": "Geen apple-touch-icon en manifest",
+          "severity": "Low",
+          "description": "/manifest.webmanifest en apple-touch-icon geven 404; alleen 32x32 icoon.",
+          "recommendation": "app/apple-icon.tsx en app/manifest.ts."
+        },
+        {
+          "title": "Review-link is een zoekopdracht",
+          "severity": "Low",
+          "description": "google.com/search?q=... in plaats van het profiel.",
+          "recommendation": "GBP review-URL (place-id) gebruiken."
+        }
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "weight": 0.1,
+      "score": 70,
+      "what_works": [
+        "HealthClub met adres, telefoon, openingstijden 7 dagen, sameAs",
+        "FAQPage met 8 vragen die overeenkomen met de zichtbare FAQ",
+        "Geen validatiefouten"
+      ],
+      "findings": [
+        {
+          "title": "HealthClub mist image, logo, geo, hasMap, @id",
+          "severity": "Medium",
+          "description": "Zonder image geen rich result; geo/hasMap koppelen aan GBP.",
+          "recommendation": "Velden toevoegen met exacte coördinaten en place-id."
+        },
+        {
+          "title": "Lidmaatschappen niet als Offer",
+          "severity": "Medium",
+          "description": "Prijzen alleen als tekst.",
+          "recommendation": "makesOffer met Offer + PriceSpecification per lidmaatschap."
+        },
+        {
+          "title": "FAQPage ook op voorwaarden-pagina",
+          "severity": "Low",
+          "description": "Schema staat in layout.tsx; FAQ is daar niet zichtbaar.",
+          "recommendation": "Verplaatsen naar app/page.tsx of Faq-component."
+        },
+        {
+          "title": "AggregateRating bewust weggelaten",
+          "severity": "Info",
+          "description": "Aantal reviews onbekend.",
+          "recommendation": "Toevoegen zodra aantal bekend is."
+        },
+        {
+          "title": "Geen Event/Schedule voor groepslessen, geen Person voor trainers, geen WebSite",
+          "severity": "Low",
+          "description": "Kansen voor rich results en entiteitsopbouw.",
+          "recommendation": "Toevoegen na bevestiging rooster."
+        }
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "weight": 0.1,
+      "score": 82,
+      "what_works": [
+        "CLS 0,003 / 0,002",
+        "TBT 20 ms / 0 ms",
+        "Desktop Performance 100",
+        "Fonts via next/font met preload en swap",
+        "Geen render-blocking derde partijen"
+      ],
+      "findings": [
+        {
+          "title": "LCP mobiel 3,5 s",
+          "severity": "High",
+          "description": "LCP-element is de h1 (fontafhankelijk); Hero.jpeg-preload en vijf logo-preloads concurreren om bandbreedte.",
+          "recommendation": "Hero.jpeg-preload weg of fetchpriority=low; priority van logo's af; poster als AVIF/WebP."
+        },
+        {
+          "title": "Hero-poster JPEG 231 KB",
+          "severity": "Medium",
+          "description": "Geen modern formaat; 138 KB besparing geschat.",
+          "recommendation": "AVIF/WebP via next/image, staande variant voor mobiel."
+        },
+        {
+          "title": "Hero-video 1,03 MB / 649 KB",
+          "severity": "Medium",
+          "description": "Wordt door autoplay direct volledig geladen.",
+          "recommendation": "Kortere loop, H.265/AV1 met fallback, of starten na idle."
+        },
+        {
+          "title": "Afbeeldingen niet responsive genoeg",
+          "severity": "Low",
+          "description": "65-80 KB te veel; logo's 2x-4x te groot.",
+          "recommendation": "sizes-attribuut; logo-afmetingen halveren."
+        },
+        {
+          "title": "Legacy JavaScript 14 KB",
+          "severity": "Low",
+          "description": "Polyfills voor oude browsers.",
+          "recommendation": "browserslist op moderne browsers."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "weight": 0.1,
+      "score": 65,
+      "what_works": [
+        "Alle content in HTML, geen client-side rendering",
+        "Feitelijke, zelfstandige zinnen met prijzen en voorwaarden",
+        "FAQ met FAQPage-schema",
+        "NAP als tekst en als schema"
+      ],
+      "findings": [
+        {
+          "title": "Geen expliciet AI-crawlerbeleid",
+          "severity": "Medium",
+          "description": "Geen robots.txt; GPTBot, ClaudeBot, PerplexityBot impliciet toegestaan.",
+          "recommendation": "Expliciete regels in app/robots.ts."
+        },
+        {
+          "title": "Geen llms.txt",
+          "severity": "Low",
+          "description": "Geen samenvattend feitenblok voor LLM's.",
+          "recommendation": "public/llms.txt met naam, adres, tijden, aanbod, prijzen, FAQ."
+        },
+        {
+          "title": "Externe vermeldingen spreken elkaar tegen",
+          "severity": "High",
+          "description": "Fresha/Trustoo geven ander adres en andere tijden; AI-modellen vermengen bronnen.",
+          "recommendation": "Citaties corrigeren (zie Local)."
+        },
+        {
+          "title": "Geen datum bij prijzen",
+          "severity": "Low",
+          "description": "AI-antwoorden citeren prijzen liefst met geldigheidsdatum.",
+          "recommendation": "'Prijzen geldig vanaf <datum>' bij tarieven."
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "weight": 0.05,
+      "score": 75,
+      "what_works": [
+        "Beschrijvende Nederlandse alt-teksten",
+        "Decoratieve hero-still correct alt=\"\" + aria-hidden",
+        "Lazy/eager loading correct, CLS nul"
+      ],
+      "findings": [
+        {
+          "title": "15 foto's op static.wixstatic.com",
+          "severity": "High",
+          "description": "Verdwijnen bij opzeggen Wix.",
+          "recommendation": "Naar public/fotos/ met zoekwoord-bestandsnamen."
+        },
+        {
+          "title": "Hero-poster zonder modern formaat",
+          "severity": "Medium",
+          "description": "231 KB JPEG.",
+          "recommendation": "AVIF/WebP."
+        },
+        {
+          "title": "Logo's te groot en 4x herhaald",
+          "severity": "Low",
+          "description": "20 img's voor 5 logo's; 2x-4x te grote bronnen.",
+          "recommendation": "Afmetingen halveren; kopieën aria-hidden."
+        }
+      ]
+    },
+    {
+      "name": "Local SEO",
+      "weight": 0,
+      "score": 66,
+      "what_works": [
+        "NAP op site en schema consistent",
+        "Routeknop, open-status, WhatsApp boven de vouw",
+        "Plaatsnaam in title/H1/description zonder overdrijving"
+      ],
+      "findings": [
+        {
+          "title": "NAP-inconsistentie Fresha en Trustoo",
+          "severity": "High",
+          "description": "Fresha: Reedijk 8-11, ma-vr 10:00-18:00; Trustoo: Reedijk 8, Mijnsheerenland; Stagemarkt: Reedijk 7j4.",
+          "recommendation": "Klant laat beide corrigeren of verwijderen; GBP, Facebook, Instagram, Apple Maps, Bing Places controleren."
+        },
+        {
+          "title": "GBP niet gekoppeld vanuit site",
+          "severity": "Medium",
+          "description": "Geen place-id-link, geen hasMap.",
+          "recommendation": "Review- en routelinks op place-id zetten."
+        },
+        {
+          "title": "Geen landingspagina per dienst",
+          "severity": "Medium",
+          "description": "'personal trainer Heinenoord' en 'boksen Hoeksche Waard' hebben geen eigen URL.",
+          "recommendation": "Zie Content."
+        },
+        {
+          "title": "Omliggende dorpen niet genoemd",
+          "severity": "Low",
+          "description": "areaServed alleen 'Hoeksche Waard'.",
+          "recommendation": "Eén natuurlijke zin met Mijnsheerenland, Puttershoek, Oud-Beijerland, Westmaas, Klaaswaal, 's-Gravendeel."
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Critical Fixes",
+        "timeframe": "Week 1 (voor livegang)",
+        "items": [
+          "robots.ts en sitemap.ts",
+          "og:image + summary_large_image",
+          "Foto's van Wix-CDN naar public/",
+          "Volledige 301-tabel",
+          "Fresha/Trustoo NAP corrigeren (klant)",
+          "Reviewaantal + GBP-link opvragen (klant)",
+          "Boks-dag bevestigen (klant)"
+        ]
+      },
+      {
+        "name": "Phase 2: High-Impact Improvements",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Beveiligingsheaders",
+          "Cache-Control voor public/-assets",
+          "Schema uitbreiden (image/geo/hasMap/@id, Offer, Person, WebSite; FAQPage alleen op /)",
+          "Contrast text-muted 4,5:1",
+          "LCP: Hero.jpeg-preload, AVIF-poster, logo-priority af, sizes",
+          "Privacypagina + KvK in footer",
+          "id=contact hernoemen, H3's uniek",
+          "apple-icon + manifest",
+          "Staging-noindex"
+        ]
+      },
+      {
+        "name": "Phase 3: Content & Authority",
+        "timeframe": "Month 2",
+        "items": [
+          "/personal-training",
+          "/groepslessen",
+          "Eventueel /bedrijfsfitness",
+          "Omliggende dorpen-zin",
+          "llms.txt + prijsdatum",
+          "Event-schema groepslessen",
+          "Reviewstrategie via WhatsApp na proefweek"
+        ]
+      },
+      {
+        "name": "Phase 4: Monitoring & Iteration",
+        "timeframe": "Ongoing",
+        "items": [
+          "Search Console na domeinwissel: verifiëren, sitemap, URL-inspectie",
+          "GA4-conversies controleren",
+          "CWV-rapport na 28 dagen, doel LCP < 2,5 s",
+          "Maandelijks GBP/NAP/rankings",
+          "Audit herhalen over 3 maanden op www.thehomegym.nl"
+        ]
+      }
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/",
+    "raw_dir": "raw/"
+  }
+}

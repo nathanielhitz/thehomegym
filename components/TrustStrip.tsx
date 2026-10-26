@@ -8,14 +8,17 @@ function Logos() {
       {certifications.map((cert) => (
         <li key={cert.name} className="flex shrink-0 items-center">
           {/* brightness-0 invert dwingt elk logo naar effen wit; de bron is al
-              wit-op-transparant, dus dit is vooral een vangnet. Eager, anders
-              laadt een kopie in het lint pas als hij in beeld schuift. */}
+              wit-op-transparant, dus dit is vooral een vangnet. Lazy: eager
+              zou vijf preloads boven de hero zetten die met de fonts om
+              bandbreedte vechten. De strip staat direct onder de hero, dus de
+              browser haalt ze toch meteen op; de kopieën in het lint delen
+              dezelfde bestanden. */}
           <Image
             src={cert.src}
             alt={cert.name}
             width={cert.width}
             height={cert.height}
-            loading="eager"
+            sizes="(min-width: 768px) 160px, 140px"
             className="h-7 w-auto brightness-0 invert opacity-70 transition-opacity duration-200 hover:opacity-100 md:h-8"
           />
         </li>

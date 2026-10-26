@@ -4,7 +4,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import MobileStickyCta from "@/components/MobileStickyCta";
-import { company, faqs, openingHours } from "@/lib/content";
+import { company } from "@/lib/content";
+import { gymSchema, websiteSchema } from "@/lib/schema";
 
 const archivo = Archivo({
   subsets: ["latin"],
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
     locale: "nl_NL",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
   alternates: {
     canonical: "/",
   },
@@ -45,55 +49,6 @@ export const metadata: Metadata = {
 // GA4 laadt alleen als NEXT_PUBLIC_GA_ID gezet is. Zonder die variabele
 // vallen alle events uit lib/track.ts terug op de browserconsole.
 const gaId = process.env.NEXT_PUBLIC_GA_ID;
-
-const dayNames: Record<number, string> = {
-  1: "Monday",
-  2: "Tuesday",
-  3: "Wednesday",
-  4: "Thursday",
-  5: "Friday",
-  6: "Saturday",
-  7: "Sunday",
-};
-
-const gymSchema = {
-  "@context": "https://schema.org",
-  "@type": "HealthClub",
-  name: company.name,
-  description:
-    "Kleinschalige sportschool in Heinenoord met onbeperkt fitness, personal training en groepslessen. Toegankelijk vanaf 18 jaar.",
-  url: "https://www.thehomegym.nl",
-  email: company.email,
-  telephone: `+31${company.whatsappNumber.slice(1)}`,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: company.street,
-    postalCode: company.postalCode,
-    addressLocality: company.city,
-    addressRegion: "Zuid-Holland",
-    addressCountry: "NL",
-  },
-  areaServed: company.region,
-  priceRange: "€€",
-  foundingDate: String(company.foundedGym),
-  sameAs: [company.instagram, company.facebook, company.tiktok],
-  openingHoursSpecification: openingHours.map((day) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: `https://schema.org/${dayNames[day.iso]}`,
-    opens: day.open,
-    closes: day.close,
-  })),
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
 
 export default function RootLayout({
   children,
@@ -124,13 +79,15 @@ export default function RootLayout({
           Ga naar hoofdinhoud
         </a>
 
+        {/* Bedrijf en site als entiteit op elke pagina. Het FAQ-schema staat
+            op de homepage, waar de vragen ook zichtbaar zijn. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(gymSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
 
         {children}

@@ -24,8 +24,9 @@ configuratie en één functie; de UI is af.
       laadt pas als die variabele bestaat.
 - [ ] In GA4 de events als conversie markeren: `form_success`,
       `whatsapp_click`, `proefweek_click`.
-- [ ] Cookiebanner en privacyverklaring op het eigen domein regelen
-      (nu nog freeprivacypolicy.com), verplicht zodra GA4 aan staat.
+- [x] Privacyverklaring staat op `/privacy` (eigen domein).
+- [ ] Cookiebanner toevoegen zodra GA4 aan staat; de privacyverklaring
+      belooft dat statistieken pas na toestemming draaien.
 - [ ] Optioneel Meta Pixel: stappen staan in de comment bovenaan
       `lib/track.ts`.
 
@@ -34,9 +35,29 @@ configuratie en één functie; de UI is af.
 - [ ] Domein `thehomegym.nl` koppelen in Vercel (Settings → Domains) en de
       DNS-records bij de huidige registrar aanpassen (A of CNAME).
 - [ ] Oude Wix-site uitzetten na de overstap.
-- [ ] 301-redirects van de oude URL's instellen (lijst staat in README.md
-      onder open punten).
-- [ ] Foto's van het Wix-CDN vervangen door eigen bestanden in `public/`.
+- [x] 301-redirects van de oude URL's staan in `next.config.ts` (alle paden
+      uit de oude Wix-sitemap plus de README-lijst). Na livegang testen.
+- [x] Foto's van het Wix-CDN staan nu in `public/fotos/`.
+
+## SEO (uit de audit van 26 okt 2026)
+
+- [x] `app/robots.ts`, `app/sitemap.ts` en `app/opengraph-image.tsx` toegevoegd.
+- [x] Fase 2 gedaan: beveiligingsheaders en cache-headers in `next.config.ts`,
+      noindex op *.vercel.app, schema uitgebreid (`lib/schema.ts`: geo, hasMap,
+      offers, trainers, WebSite; FAQ alleen op home), contrast `--color-muted`
+      naar #5f5c58, privacypagina `/privacy`, `apple-icon` en `manifest`,
+      hero-poster als WebP, logo's lazy en op halve maat.
+- [ ] Geo-coördinaten in `lib/schema.ts` zijn van OpenStreetMap (Reedijk 7);
+      vervangen door de exacte positie uit Google Business Profile.
+- [ ] Fresha en Trustoo laten corrigeren naar Reedijk 7-J4, 3274 KE Heinenoord
+      en de echte openingstijden (Fresha zegt nu Reedijk 8-11 en 10:00-18:00,
+      Trustoo zegt Reedijk 8 in Mijnsheerenland). Ook GBP, Facebook-info,
+      Instagram-bio, Apple Maps en Bing Places nalopen.
+- [ ] Reviewaantal en de GBP-reviewlink (place-id) opvragen; dan
+      "5,0 op Google (n reviews)" tonen en `AggregateRating` toevoegen.
+- [ ] Boks-dag bevestigen (zaterdag of zondag).
+- [ ] Na domeinwissel: Search Console verifiëren, sitemap indienen.
+- Rest van het actieplan: `thehomegym.vercel.app-audit/ACTION-PLAN.md`.
 
 ## Content
 

@@ -10,10 +10,15 @@ import Reviews from "@/components/Reviews";
 import Story from "@/components/Story";
 import Faq from "@/components/Faq";
 import ContactSection from "@/components/ContactSection";
+import { faqSchema } from "@/lib/schema";
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* overHero: de balk staat transparant met lichte tekst boven de foto */}
       <Navbar overHero />
       <main id="hoofdinhoud">

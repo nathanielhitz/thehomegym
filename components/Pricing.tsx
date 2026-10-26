@@ -56,6 +56,7 @@ export default function Pricing() {
 
                 <h3 className="mt-4 font-display text-[19px] leading-tight font-bold text-ink">
                   {plan.name}
+                  <span className="sr-only">, {plan.duration}</span>
                 </h3>
                 <p className="mt-1 text-[15px] text-muted">{plan.duration}</p>
 

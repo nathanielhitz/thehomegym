@@ -1,0 +1,1020 @@
+{
+  "desktop": {
+    "loadMs": 390,
+    "ttfb": 83.79999999701977,
+    "domContentLoaded": 150.19999999552965,
+    "loadEvent": 387.8999999985099,
+    "transferTotal": 1731893,
+    "byType": {
+      "link": 343511,
+      "script": 176541,
+      "video": 1033572,
+      "img": 158064,
+      "fetch": 20205
+    },
+    "resourceCount": 28,
+    "cls": 0.010674650734900119,
+    "lcp": 296,
+    "lcpEl": "<h1 class=\"max-w-[15ch] font-display text-[38px] leading-[1.03] font-extrabold text-paper sm:text-[52px] lg:text-[60px] xl:text-[66px]\">De persoonlijke sportsch",
+    "videoSrc": "https://thehomegym.vercel.app/hero-video.mp4",
+    "videoPlaying": true,
+    "h1": "De persoonlijke sportschool van Heinenoord.",
+    "h1Visible": true,
+    "foldCtas": [
+      "THEHOMEGYM.",
+      "Aanbod",
+      "Rooster",
+      "Tarieven",
+      "Over ons",
+      "Contact",
+      "Gratis proefweek",
+      "Gratis proefweek",
+      "App ons",
+      "5,0 op Google"
+    ],
+    "tapTargetsSmall": 38,
+    "hasHScroll": false,
+    "viewport": [
+      1440,
+      900
+    ],
+    "consoleErrs": [],
+    "failed": [],
+    "imgs": [
+      {
+        "src": "https://thehomegym.vercel.app/Hero.jpeg",
+        "natural": [
+          1360,
+          1020
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "",
+        "loading": "auto"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=384&q=75",
+        "natural": [
+          260,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=256&q=75",
+        "natural": [
+          242,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=640&q=75",
+        "natural": [
+          562,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=384&q=75",
+        "natural": [
+          299,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=640&q=75",
+        "natural": [
+          397,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=384&q=75",
+        "natural": [
+          260,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=256&q=75",
+        "natural": [
+          242,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=640&q=75",
+        "natural": [
+          562,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=384&q=75",
+        "natural": [
+          299,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=640&q=75",
+        "natural": [
+          397,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=384&q=75",
+        "natural": [
+          260,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=256&q=75",
+        "natural": [
+          242,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=640&q=75",
+        "natural": [
+          562,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=384&q=75",
+        "natural": [
+          299,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=640&q=75",
+        "natural": [
+          397,
+          128
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=384&q=75",
+        "natural": [
+          260,
+          128
+        ],
+        "rendered": [
+          65,
+          32
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=256&q=75",
+        "natural": [
+          242,
+          128
+        ],
+        "rendered": [
+          61,
+          32
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=640&q=75",
+        "natural": [
+          562,
+          128
+        ],
+        "rendered": [
+          141,
+          32
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=384&q=75",
+        "natural": [
+          299,
+          128
+        ],
+        "rendered": [
+          75,
+          32
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=640&q=75",
+        "natural": [
+          397,
+          128
+        ],
+        "rendered": [
+          99,
+          32
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_4a5c63614dfb40e1b21785",
+        "natural": [
+          835,
+          974
+        ],
+        "rendered": [
+          679,
+          360
+        ],
+        "alt": "Lid traint op een schuine bank terwijl de trainer meekijkt",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_a9ef0dd4607746f8b5e77b",
+        "natural": [
+          576,
+          369
+        ],
+        "rendered": [
+          407,
+          144
+        ],
+        "alt": "De workout-app en voedingsapp van Thehomegym op een telefoon",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_9f86d6ff87b84f2d891063",
+        "natural": [
+          835,
+          974
+        ],
+        "rendered": [
+          677,
+          320
+        ],
+        "alt": "Lid van Thehomegym traint zelfstandig met halters",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_8ac15c8d0cd64cf0a99e12",
+        "natural": [
+          288,
+          374
+        ],
+        "rendered": [
+          163,
+          373
+        ],
+        "alt": "Trainer van Thehomegym kijkt geknield mee met de squat van een lid",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_de18957fd00343979ffbc3",
+        "natural": [
+          288,
+          345
+        ],
+        "rendered": [
+          163,
+          373
+        ],
+        "alt": "Groepsles boksen bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_2abcaaa46a274466906561",
+        "natural": [
+          80,
+          100
+        ],
+        "rendered": [
+          80,
+          80
+        ],
+        "alt": "Krachtoefening tijdens de groepsles buik, billen en benen",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_dd9c5e0e6a724f509cdf9d",
+        "natural": [
+          80,
+          100
+        ],
+        "rendered": [
+          80,
+          80
+        ],
+        "alt": "Deelnemers tijdens de circuittraining",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_dd9c5e0e6a724f509cdf9d",
+        "natural": [
+          80,
+          100
+        ],
+        "rendered": [
+          80,
+          80
+        ],
+        "alt": "Deelnemers tijdens de circuittraining",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_78a37bc7456c476296c7c6",
+        "natural": [
+          80,
+          100
+        ],
+        "rendered": [
+          80,
+          80
+        ],
+        "alt": "Bokstraining met handschoenen en pads",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_1f46135f3dc94ac1a131ae",
+        "natural": [
+          720,
+          514
+        ],
+        "rendered": [
+          556,
+          417
+        ],
+        "alt": "Trainer begeleidt een lid tijdens een oefening op de bank",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_c21211e107504415b59adc",
+        "natural": [
+          475,
+          594
+        ],
+        "rendered": [
+          371,
+          463
+        ],
+        "alt": "Rick, personal trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_d8e22b14f753472cb11cb4",
+        "natural": [
+          475,
+          594
+        ],
+        "rendered": [
+          371,
+          463
+        ],
+        "alt": "Stef, personal trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_acf4dc3645f74fb4918fcf",
+        "natural": [
+          475,
+          594
+        ],
+        "rendered": [
+          371,
+          463
+        ],
+        "alt": "Mathijs, trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_9364d3ff49b34ec2890f08",
+        "natural": [
+          648,
+          485
+        ],
+        "rendered": [
+          539,
+          371
+        ],
+        "alt": "Sledge en gewichtsschijven op de kunstgrasstrook in de zaal",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          552,
+          282
+        ],
+        "alt": "Groepsles boksen bij Thehomegym",
+        "loading": "lazy"
+      }
+    ]
+  },
+  "mobile": {
+    "loadMs": 356,
+    "ttfb": 106.60000000149012,
+    "domContentLoaded": 166.80000000447035,
+    "loadEvent": 353.6000000014901,
+    "transferTotal": 1385014,
+    "byType": {
+      "link": 343511,
+      "script": 176541,
+      "img": 194976,
+      "video": 649781,
+      "fetch": 20205
+    },
+    "resourceCount": 26,
+    "cls": 0,
+    "lcp": 232,
+    "lcpEl": "<h1 class=\"max-w-[15ch] font-display text-[38px] leading-[1.03] font-extrabold text-paper sm:text-[52px] lg:text-[60px] xl:text-[66px]\">De persoonlijke sportsch",
+    "videoSrc": "https://thehomegym.vercel.app/hero-video-staand.mp4",
+    "videoPlaying": true,
+    "h1": "De persoonlijke sportschool van Heinenoord.",
+    "h1Visible": true,
+    "foldCtas": [
+      "THEHOMEGYM.",
+      "Gratis proefweek",
+      "App ons",
+      "5,0 op Google"
+    ],
+    "tapTargetsSmall": 32,
+    "hasHScroll": false,
+    "viewport": [
+      390,
+      664
+    ],
+    "consoleErrs": [],
+    "failed": [],
+    "imgs": [
+      {
+        "src": "https://thehomegym.vercel.app/Hero.jpeg",
+        "natural": [
+          1360,
+          1020
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "",
+        "loading": "auto"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=640&q=75",
+        "natural": [
+          130,
+          64
+        ],
+        "rendered": [
+          57,
+          28
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=640&q=75",
+        "natural": [
+          121,
+          64
+        ],
+        "rendered": [
+          53,
+          28
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=1200&q=75",
+        "natural": [
+          281,
+          64
+        ],
+        "rendered": [
+          123,
+          28
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=640&q=75",
+        "natural": [
+          149,
+          64
+        ],
+        "rendered": [
+          65,
+          28
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=828&q=75",
+        "natural": [
+          198,
+          64
+        ],
+        "rendered": [
+          87,
+          28
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=640&q=75",
+        "natural": [
+          130,
+          64
+        ],
+        "rendered": [
+          57,
+          28
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=640&q=75",
+        "natural": [
+          121,
+          64
+        ],
+        "rendered": [
+          53,
+          28
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=1200&q=75",
+        "natural": [
+          281,
+          64
+        ],
+        "rendered": [
+          123,
+          28
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=640&q=75",
+        "natural": [
+          149,
+          64
+        ],
+        "rendered": [
+          65,
+          28
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=828&q=75",
+        "natural": [
+          198,
+          64
+        ],
+        "rendered": [
+          87,
+          28
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=640&q=75",
+        "natural": [
+          130,
+          64
+        ],
+        "rendered": [
+          57,
+          28
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=640&q=75",
+        "natural": [
+          121,
+          64
+        ],
+        "rendered": [
+          53,
+          28
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=1200&q=75",
+        "natural": [
+          281,
+          64
+        ],
+        "rendered": [
+          123,
+          28
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=640&q=75",
+        "natural": [
+          149,
+          64
+        ],
+        "rendered": [
+          65,
+          28
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=828&q=75",
+        "natural": [
+          198,
+          64
+        ],
+        "rendered": [
+          87,
+          28
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fnl-actief.png&w=640&q=75",
+        "natural": [
+          130,
+          64
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "NL Actief",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fissa.png&w=640&q=75",
+        "natural": [
+          121,
+          64
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "ISSA Certified",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fmobility-trainer.png&w=1200&q=75",
+        "natural": [
+          281,
+          64
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Mobility Trainer",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fboxercise.png&w=640&q=75",
+        "natural": [
+          149,
+          64
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Boxercise Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=%2Flogos%2Fbedrijfsfitness-nederland.png&w=828&q=75",
+        "natural": [
+          198,
+          64
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Bedrijfsfitness Nederland",
+        "loading": "eager"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_4a5c63614dfb40e1b21785",
+        "natural": [
+          390,
+          454
+        ],
+        "rendered": [
+          350,
+          300
+        ],
+        "alt": "Lid traint op een schuine bank terwijl de trainer meekijkt",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_a9ef0dd4607746f8b5e77b",
+        "natural": [
+          325,
+          208
+        ],
+        "rendered": [
+          292,
+          128
+        ],
+        "alt": "De workout-app en voedingsapp van Thehomegym op een telefoon",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_9f86d6ff87b84f2d891063",
+        "natural": [
+          390,
+          454
+        ],
+        "rendered": [
+          348,
+          224
+        ],
+        "alt": "Lid van Thehomegym traint zelfstandig met halters",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_8ac15c8d0cd64cf0a99e12",
+        "natural": [
+          325,
+          422
+        ],
+        "rendered": [
+          348,
+          176
+        ],
+        "alt": "Trainer van Thehomegym kijkt geknield mee met de squat van een lid",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_de18957fd00343979ffbc3",
+        "natural": [
+          325,
+          390
+        ],
+        "rendered": [
+          348,
+          176
+        ],
+        "alt": "Groepsles boksen bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Krachtoefening tijdens de groepsles buik, billen en benen",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Deelnemers tijdens de circuittraining",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Deelnemers tijdens de circuittraining",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          0,
+          0
+        ],
+        "alt": "Bokstraining met handschoenen en pads",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          350,
+          263
+        ],
+        "alt": "Trainer begeleidt een lid tijdens een oefening op de bank",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          350,
+          438
+        ],
+        "alt": "Rick, personal trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          350,
+          438
+        ],
+        "alt": "Stef, personal trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          350,
+          438
+        ],
+        "alt": "Mathijs, trainer bij Thehomegym",
+        "loading": "lazy"
+      },
+      {
+        "src": "",
+        "natural": [
+          0,
+          0
+        ],
+        "rendered": [
+          348,
+          240
+        ],
+        "alt": "Sledge en gewichtsschijven op de kunstgrasstrook in de zaal",
+        "loading": "lazy"
+      },
+      {
+        "src": "https://thehomegym.vercel.app/_next/image?url=https%3A%2F%2Fstatic.wixstatic.com%2Fmedia%2F49ba32_de18957fd00343979ffbc3",
+        "natural": [
+          325,
+          390
+        ],
+        "rendered": [
+          350,
+          200
+        ],
+        "alt": "Groepsles boksen bij Thehomegym",
+        "loading": "lazy"
+      }
+    ]
+  }
+}

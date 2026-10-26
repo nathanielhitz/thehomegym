@@ -216,12 +216,12 @@ export default function ProefweekForm() {
       </div>
 
       <div className="space-y-2">
-        <label htmlFor="contact" className={labelClass}>
+        <label htmlFor="bereikbaar" className={labelClass}>
           Hoe kunnen we je bereiken?
         </label>
         <input
           ref={contactRef}
-          id="contact"
+          id="bereikbaar"
           name="contact"
           type="text"
           inputMode="email"
@@ -232,15 +232,15 @@ export default function ProefweekForm() {
           required
           aria-required="true"
           aria-invalid={contactInvalid}
-          aria-describedby={contactInvalid ? "contact-fout" : "contact-hint"}
+          aria-describedby={contactInvalid ? "bereikbaar-fout" : "bereikbaar-hint"}
           className={inputClass}
         />
         {contactInvalid ? (
-          <p id="contact-fout" className="text-[14px] text-brick-deep">
+          <p id="bereikbaar-fout" className="text-[14px] text-brick-deep">
             {error.message}
           </p>
         ) : (
-          <p id="contact-hint" className="text-[13px] text-muted">
+          <p id="bereikbaar-hint" className="text-[13px] text-muted">
             Eén van de twee is genoeg. We gebruiken het alleen voor de proefweek.
           </p>
         )}

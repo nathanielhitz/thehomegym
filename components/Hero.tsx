@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Star } from "@phosphor-icons/react/dist/ssr";
 import Button from "@/components/Button";
 import HeroVideo from "@/components/HeroVideo";
@@ -18,14 +19,20 @@ export default function Hero() {
       <HeroVideo
         src="/hero-video.mp4"
         srcMobile="/hero-video-staand.mp4"
-        poster={images.hero.src}
+        poster={images.heroPoster}
         className="hero-video absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[0.7] saturate-[0.85] lg:object-[45%_center] lg:brightness-[0.8] lg:saturate-[0.9]"
       />
-      <img
+      {/* Stilstaand beeld voor prefers-reduced-motion. Via next/image, zodat
+          het als AVIF/WebP op maat komt; display:none (zie globals.css) houdt
+          de download tegen zolang de video speelt. */}
+      <Image
         src={images.hero.src}
         alt=""
         aria-hidden
-        className="hero-video-still absolute inset-0 h-full w-full object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
+        fill
+        sizes="100vw"
+        quality={75}
+        className="hero-video-still object-cover object-[38%_center] brightness-[1.3] lg:object-[45%_center]"
       />
 
       {/* Scrim. De video is al donker gezet; de gradiënt houdt daarbovenop

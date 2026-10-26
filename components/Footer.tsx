@@ -70,6 +70,14 @@ export default function Footer() {
                   Algemene voorwaarden
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-[15px] text-muted underline-offset-4 transition-colors duration-200 hover:text-ink hover:underline"
+                >
+                  Privacyverklaring
+                </Link>
+              </li>
             </ul>
           </nav>
 

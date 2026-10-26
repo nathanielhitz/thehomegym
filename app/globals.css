@@ -5,7 +5,7 @@
   --color-paper: #f7f5f2; /* paginachtergrond */
   --color-paper-deep: #efece7; /* subtiel afwijkende sectie, zelfde familie */
   --color-ink: #141517; /* koppen en bodytekst */
-  --color-muted: #6b6864; /* bijtekst en labels */
+  --color-muted: #5f5c58; /* bijtekst en labels; 5.2:1 op clay, 6.1:1 op paper */
 
   /* ── Eén accent, in twee dieptes ──────────────────────────────────────────
      brick draagt tekst (knoppen, labels, links) en haalt daarom WCAG AA op

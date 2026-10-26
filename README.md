@@ -101,11 +101,11 @@ wijzigen doe je daar, niet in de componenten.
 
 ## Beeldmateriaal
 
-De foto's komen van het Wix-CDN van de huidige site en worden via
-`next/image` opnieuw geschaald (`lib/content.ts` → `wixImage()`). Er is niets
-gedownload. Bij oplevering moeten deze vervangen worden door originelen van
-de klant, of ten minste door een eigen CDN, zodat de site niet afhankelijk is
-van Wix.
+De foto's staan lokaal in `public/fotos/` met beschrijvende bestandsnamen.
+Het zijn de originelen van het Wix-CDN van de oude site, verkleind naar
+maximaal 2000px (sips, kwaliteit 82). De site is dus niet meer afhankelijk
+van Wix. Componenten gebruiken `next/image` met `fill` en object-cover; de
+uitsnede gebeurt in CSS.
 
 De hero heeft twee achtergrondvideo's, allebei zonder geluid, autoplay,
 geknipt uit het origineel in `bronbestanden/`:

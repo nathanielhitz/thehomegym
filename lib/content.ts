@@ -39,56 +39,59 @@ export const mailtoHref = (subject: string, body = "") =>
   }`;
 
 /* ── Beeld ──────────────────────────────────────────────────────────────────
-   De foto's van de huidige site worden hergebruikt via het Wix-CDN en door
-   next/image opnieuw geschaald. Er is niets gedownload of nabewerkt.        */
-export const wixImage = (id: string, w: number, h: number) =>
-  `https://static.wixstatic.com/media/${id}/v1/fill/w_${w},h_${h},al_c,q_85,enc_auto/${id}`;
+   De foto's van de oude site staan nu lokaal in public/fotos (originelen van
+   het Wix-CDN, verkleind naar max 2000px, zodat de site niet afhankelijk is
+   van Wix na de overstap). Componenten gebruiken next/image met `fill` en
+   object-cover, dus de uitsnede gebeurt in CSS.                              */
 
 export const images = {
-  // Full-bleed hero: eigen zaal, donkere wanden waar de tekst overheen valt.
-  // Dit is de enige foto die lokaal staat (public/Hero.jpeg, 1360x1020).
+  // Full-bleed hero: eigen zaal, donkere wanden waar de tekst overheen valt
+  // (public/Hero.jpeg, 1360x1020). Dient ook als poster van de hero-video.
+  // Poster van de hero-video: dezelfde foto als WebP (1360px, 72%), zodat
+  // de browser niet eerst 231 KB JPEG hoeft te halen voor de video start.
+  heroPoster: "/hero-poster.webp",
   hero: {
     src: "/Hero.jpeg",
     alt: "Trainingsruimte van Thehomegym met dumbbellrek, spiegelwand en verstelbare banken",
   },
   coaching: {
-    src: wixImage("49ba32_1f46135f3dc94ac1a131ae00135368c1~mv2.jpg", 1400, 1000),
+    src: "/fotos/begeleiding-bankdrukken.jpg",
     alt: "Trainer begeleidt een lid tijdens een oefening op de bank",
   },
   benchCoaching: {
-    src: wixImage("49ba32_4a5c63614dfb40e1b21785296e351196~mv2.jpg", 1200, 1400),
+    src: "/fotos/schuine-bank-trainer.jpg",
     alt: "Lid traint op een schuine bank terwijl de trainer meekijkt",
   },
   freeTraining: {
-    src: wixImage("49ba32_9f86d6ff87b84f2d8910639b438d4fd5~mv2.jpg", 1200, 1400),
+    src: "/fotos/vrij-trainen-halters.jpg",
     alt: "Lid van Thehomegym traint zelfstandig met halters",
   },
   personalTraining: {
-    src: wixImage("49ba32_8ac15c8d0cd64cf0a99e1258697411cd~mv2.jpg", 1000, 1300),
+    src: "/fotos/personal-training-squat.jpg",
     alt: "Trainer van Thehomegym kijkt geknield mee met de squat van een lid",
   },
   groupClass: {
-    src: wixImage("49ba32_de18957fd00343979ffbc3872bf5a789~mv2.jpg", 1000, 1200),
+    src: "/fotos/groepsles-boksen.jpg",
     alt: "Groepsles boksen bij Thehomegym",
   },
   circuit: {
-    src: wixImage("49ba32_dd9c5e0e6a724f509cdf9da23b986d35~mv2.jpg", 800, 1000),
+    src: "/fotos/circuittraining.jpg",
     alt: "Deelnemers tijdens de circuittraining",
   },
   boxing: {
-    src: wixImage("49ba32_78a37bc7456c476296c7c603547a7efe~mv2.jpg", 800, 1000),
+    src: "/fotos/bokstraining-pads.jpg",
     alt: "Bokstraining met handschoenen en pads",
   },
   bbb: {
-    src: wixImage("49ba32_2abcaaa46a2744669065616116c729d0~mv2.png", 800, 1000),
+    src: "/fotos/buik-billen-benen.jpg",
     alt: "Krachtoefening tijdens de groepsles buik, billen en benen",
   },
   apps: {
-    src: wixImage("49ba32_a9ef0dd4607746f8b5e77b15d20054ba~mv2.png", 1000, 640),
+    src: "/fotos/workout-app-telefoon.png",
     alt: "De workout-app en voedingsapp van Thehomegym op een telefoon",
   },
   equipmentDetail: {
-    src: wixImage("49ba32_9364d3ff49b34ec2890f0853c8b093da~mv2.jpg", 1200, 900),
+    src: "/fotos/sledge-kunstgras.jpg",
     alt: "Sledge en gewichtsschijven op de kunstgrasstrook in de zaal",
   },
 };
@@ -96,28 +99,29 @@ export const images = {
 /* ── Keurmerken en aansluitingen (logo's van de huidige site) ────────────── */
 /* Logo's van aansluitingen en certificeringen. Lokaal als wit-op-transparant
    PNG (128px hoog, strak uitgesneden), zodat ze op de donkere band allemaal
-   dezelfde hoogte en kleur krijgen. ISSA en Boxercise hadden op Wix een
+   dezelfde hoogte en kleur krijgen. De afmetingen hieronder zijn de helft van
+   het bestand: de logo's staan 28-32px hoog, dus 64px is genoeg voor 2x. ISSA en Boxercise hadden op Wix een
    ingebakken zwarte achtergrond; die is weggesneden (public/logos). */
 export const certifications = [
-  { name: "NL Actief", src: "/logos/nl-actief.png", width: 260, height: 128 },
-  { name: "ISSA Certified", src: "/logos/issa.png", width: 242, height: 128 },
+  { name: "NL Actief", src: "/logos/nl-actief.png", width: 130, height: 64 },
+  { name: "ISSA Certified", src: "/logos/issa.png", width: 121, height: 64 },
   {
     name: "Mobility Trainer",
     src: "/logos/mobility-trainer.png",
-    width: 562,
-    height: 128,
+    width: 281,
+    height: 64,
   },
   {
     name: "Boxercise Nederland",
     src: "/logos/boxercise.png",
-    width: 299,
-    height: 128,
+    width: 150,
+    height: 64,
   },
   {
     name: "Bedrijfsfitness Nederland",
     src: "/logos/bedrijfsfitness-nederland.png",
-    width: 397,
-    height: 128,
+    width: 199,
+    height: 64,
   },
 ];
 
@@ -441,7 +445,7 @@ export const team: TeamMember[] = [
       "Boxercise Advanced Instructeur",
     ],
     image: {
-      src: wixImage("49ba32_c21211e107504415b59adc665aa87302~mv2.jpg", 800, 1000),
+      src: "/fotos/trainer-rick.jpg",
       alt: "Rick, personal trainer bij Thehomegym",
     },
   },
@@ -457,7 +461,7 @@ export const team: TeamMember[] = [
       "Boxercise Advanced Instructeur",
     ],
     image: {
-      src: wixImage("49ba32_d8e22b14f753472cb11cb45861fa9cb4~mv2.jpg", 800, 1000),
+      src: "/fotos/trainer-stef.jpg",
       alt: "Stef, personal trainer bij Thehomegym",
     },
   },
@@ -468,7 +472,7 @@ export const team: TeamMember[] = [
     bio: "Mathijs komt uit Rotterdam en sport al van jongs af aan. Hij viel zelf flink af door regelmatig te trainen en bewuster te eten, en gebruikt die ervaring om anderen op weg te helpen. Loop je hem tegen het lijf, spreek hem gerust aan.",
     certifications: [],
     image: {
-      src: wixImage("49ba32_acf4dc3645f74fb4918fcf1eacaaa275~mv2.jpg", 800, 1000),
+      src: "/fotos/trainer-mathijs.jpg",
       alt: "Mathijs, trainer bij Thehomegym",
     },
   },
